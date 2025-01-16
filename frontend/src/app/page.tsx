@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import LogoCarousel from "./components/Carousel";
 import { GeistMono } from 'geist/font/mono';
 import CardIncident from './components/CardIncident';
-
+import Detail from './components/Detail';
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a152594] relative overflow-hidden">
@@ -103,12 +103,20 @@ export default function Home() {
       <LogoCarousel />
 
 </div>
-      <motion.div
+<motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <CardIncident />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <Detail />
       </motion.div>
     </div>
   );
