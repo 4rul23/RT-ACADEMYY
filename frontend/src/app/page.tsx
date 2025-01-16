@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from "./components/Navbar";
 import LogoCarousel from "./components/Carousel";
 import { GeistMono } from 'geist/font/mono';
+import CardIncident from './components/CardIncident';
 
 export default function Home() {
   return (
@@ -67,7 +68,7 @@ export default function Home() {
               Individu atau organisasi Pengembangan Informatika yang berkinerja tinggi.
             </motion.p>
 
-            {/* CTA Buttons */}
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,18 +97,19 @@ export default function Home() {
       </div>
 
 
-      <div className="relative bg-[#0a152500]">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A1525] via-[#0A1525] to-transparent"></div>
-        <div className="relative px-6 py-16 mx-auto max-w-7xl lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <LogoCarousel />
-          </motion.div>
-        </div>
-      </div>
+      <div className="relative bg-[#0a152500] ">
+  <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A1525] via-[#0A1525] to-transparent"></div>
+
+      <LogoCarousel />
+
+</div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <CardIncident />
+      </motion.div>
     </div>
   );
 }
