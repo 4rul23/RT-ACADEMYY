@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Book, School , GraduationCap , Building2 } from 'lucide-react';
 import { GeistMono } from 'geist/font/mono';
-import preview from '../assets/Preview/preview.png';
-import telkom from '../assets/Carousel/SMKT.png';
+import preview from '../assets/Preview/preview.svg';
+
 
 export default function Preview() {
   return (
@@ -44,25 +44,26 @@ export default function Preview() {
         </motion.header>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative mb-24"
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1525] via-transparent to-transparent z-10" />
-          <div className="relative aspect-[16/9]">
-            <Image
-              src={preview}
-              alt="Dashboard screenshot"
-              fill
-              className="object-cover shadow-2xl rounded-xl shadow-cyan-500/10"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-            />
-          </div>
-        </motion.div>
-
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="relative w-full mb-24"
+>
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1525] via-transparent to-transparent z-10" />
+  <div className="relative w-full">
+    <Image
+      src={preview}
+      alt="Dashboard screenshot"
+      width={1920}
+      height={1080}
+      className="w-full h-auto shadow-2xl rounded-xl shadow-cyan-500/10"
+      priority
+      quality={90}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+    />
+  </div>
+</motion.div>
 
         <div className="grid gap-8 md:grid-cols-2">
   <motion.div

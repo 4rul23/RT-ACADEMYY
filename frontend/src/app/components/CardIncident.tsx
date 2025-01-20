@@ -24,7 +24,7 @@ const CardIncident = () => {
 
   return (
     <section className="relative px-4 py-16 mx-auto max-w-7xl">
-      {/* Animated background gradients */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />

@@ -120,9 +120,6 @@ export default function Detail() {
             delay={0.5}
           />
         </div>
-
-
-
       </section>
     );
   }
