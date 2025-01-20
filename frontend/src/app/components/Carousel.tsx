@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
-import { StaticImageData } from 'next/image';
+import { motion } from 'framer-motion';
+import { StaticImageData } from 'next/image'; 
 import TELU from '@/app/assets/Carousel/TELU.png';
 import STEI from '@/app/assets/Carousel/STEI.png';
 import ITS from '@/app/assets/Carousel/ITSG.png';
@@ -30,7 +30,7 @@ export default function LogoCarousel() {
       transition: {
         x: {
           repeat: Infinity,
-          duration: 30,
+          duration: 120,
           ease: "linear",
         }
       }

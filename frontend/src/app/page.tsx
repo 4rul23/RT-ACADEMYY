@@ -1,10 +1,18 @@
 'use client'
+import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from "./components/Navbar";
-import LogoCarousel from "./components/Carousel";
 import { GeistMono } from 'geist/font/mono';
-import CardIncident from './components/CardIncident';
-import Detail from './components/Detail';
+const LogoCarousel = lazy(() => import("./components/Carousel"));
+const CardIncident = lazy(() => import("./components/CardIncident"));
+const Detail = lazy(() => import("./components/Detail"));
+const Preview = lazy(() => import("./components/preview"));
+
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center w-full h-40">
+    <div className="w-8 h-8 border-4 border-cyan-500 rounded-full animate-spin border-t-transparent" />
+  </div>
+);
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a152594] relative overflow-hidden">
@@ -17,6 +25,8 @@ export default function Home() {
       </div>
 
       <Navbar />
+
+
 
       <div className="min-h-screen bg-[#0a152594] relative overflow-hidden">
       <div className="absolute inset-0">
@@ -100,7 +110,16 @@ export default function Home() {
       <div className="relative bg-[#0a152500] ">
   <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A1525] via-[#0A1525] to-transparent"></div>
 
-      <LogoCarousel />
+  <Suspense fallback={<LoadingSpinner />}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <LogoCarousel />
+        </motion.div>
+      </Suspense>
+
 
 </div>
 <motion.div
@@ -110,7 +129,6 @@ export default function Home() {
       >
         <CardIncident />
       </motion.div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -118,6 +136,16 @@ export default function Home() {
       >
         <Detail />
       </motion.div>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <Preview />
+        </motion.div>
+      </Suspense>
     </div>
   );
 }
