@@ -9,6 +9,7 @@ const Detail = lazy(() => import("./components/Detail"));
 const Preview = lazy(() => import("./components/preview"));
 const Preview2 = lazy(() => import("./components/preview_2"));
 const Comment  = lazy(() => import("./components/Comment"));
+const Footer = lazy(() => import("./components/Footer"));
 
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center w-full h-40">
@@ -166,6 +167,16 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Comment />
+        </motion.div>
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          <Footer />
         </motion.div>
       </Suspense>
     </div>

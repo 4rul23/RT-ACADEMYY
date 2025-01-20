@@ -8,10 +8,10 @@ import { GeistMono } from 'geist/font/mono';
 import logos from "@/app/assets/logos.png";
 const NAV_LINKS = [
   { href: "/produk", label: "Produk" },
-  { href: "/tujuan", label: "Tujuan" },
-  { href: "/harga", label: "Harga" },
-  { href: "/resources", label: "Referensi" },
-  { href: "/student", label: "Siswa" }
+  { href: "/Tujuan", label: "Tujuan" },
+  { href: "/Harga", label: "Harga" },
+  { href: "/Resources", label: "Referensi" },
+  { href: "/Student", label: "Siswa" }
 ];
 
 export default function Navbar() {

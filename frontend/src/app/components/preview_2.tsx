@@ -45,7 +45,7 @@ export default function Preview2() {
         >
           <h1 className={`
             text-3xl font-bold leading-tight text-transparent md:text-4xl
-            bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text
+            bg-white   bg-clip-text
             ${GeistMono.className}
           `}>
             Pembelajaran web development  <br /> interaktif untuk siswa SMA/SMK di Indonesia
@@ -76,9 +76,8 @@ export default function Preview2() {
           </div>
         </motion.div>
 
-        {/* Stats Grid */}
+
         <div className="grid gap-6 mb-16 md:grid-cols-3 md:gap-8">
-          {/* First Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +102,7 @@ export default function Preview2() {
             <div className="w-full h-1 transition-transform duration-300 transform scale-x-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 group-hover:scale-x-100" />
           </motion.div>
 
-          {/* Second Card */}
+  
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
