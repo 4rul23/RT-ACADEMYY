@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Sparkles, Clock, Rocket, Code , Book  } from 'lucide-react'
+import { Sparkles, Clock, Rocket, Code , Book, LucideIcon  } from 'lucide-react'
 
-    
+
 interface Track {
     id: string
     title: string

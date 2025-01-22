@@ -9,6 +9,7 @@ import {  User,  } from 'lucide-react'
 import { GeistMono } from 'geist/font/mono'
 import logo from '../assets/logos.png'
 import StepOne from './components/Stepone'
+import StepTwo from './components/Steptwo'
 
 interface FormData {
   fullName: string
@@ -118,33 +119,33 @@ export default function SignupPage() {
 
 
         <motion.form
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          onSubmit={handleSubmit}
-          className="space-y-4"
-        >
-          {step === 1 ? (
-            <StepOne
-              formData={formData}
-              handleInputChange={handleInputChange}
-              setStep={setStep}
-            />
-          ) : (
-            <StepTwo
-              formData={formData}
-              handleInputChange={handleInputChange}
-              showPassword={showPassword}
-              setShowPassword={setShowPassword}
-              showConfirmPassword={showConfirmPassword}
-              setShowConfirmPassword={setShowConfirmPassword}
-              setStep={setStep}
-              isLoading={isLoading}
-            />
-          )}
-        </motion.form>
-      </motion.div>
-    </div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
+            {step === 1 ? (
+              <StepOne
+                formData={formData}
+                handleInputChange={handleInputChange}
+                setStep={setStep}
+              />
+            ) : (
+              <StepTwo
+                formData={formData}
+                handleInputChange={handleInputChange}
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
+                showConfirmPassword={showConfirmPassword}
+                setShowConfirmPassword={setShowConfirmPassword}
+                setStep={setStep}
+                isLoading={isLoading}
+              />
+            )}
+          </motion.form>
+        </motion.div>
+      </div>
     </div>
   )
 }

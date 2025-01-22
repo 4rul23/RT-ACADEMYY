@@ -30,14 +30,13 @@ export default function StepOne({ formData, handleInputChange, setStep }: StepOn
             name="fullName"
             value={formData.fullName}
             onChange={handleInputChange}
-            className="w-full px-10 py-2 text-white transition-colors border border-gray-700 rounded-lg bg-gray-900/50 placeholder:text-gray-500 focus:outline-none focus:border-cyan-500"
+            className="w-full px-10 py-2 text-sm text-white transition-colors border border-gray-700 rounded-lg bg-gray-900/50 placeholder:text-gray-500 focus:outline-none focus:border-cyan-500"
             placeholder="Masukkan nama lengkap"
             required
           />
         </div>
       </div>
 
-      {/* Email Field */}
       <div className="space-y-1">
         <label className="text-xs font-medium text-gray-300">Email</label>
         <div className="relative">

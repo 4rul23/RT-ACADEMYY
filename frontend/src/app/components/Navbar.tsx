@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { href: "/produk", label: "Produk" },
   { href: "/Tujuan", label: "Tujuan" },
   { href: "/Harga", label: "Harga" },
-  { href: "/Resources", label: "Referensi" },
+  { href: "/Referensi", label: "Referensi" },
   { href: "/Student", label: "Siswa" }
 ];
 
