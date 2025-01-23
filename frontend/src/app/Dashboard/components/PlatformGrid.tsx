@@ -24,7 +24,7 @@ const platforms: Platform[] = [
     title: "Learning Path",
     description: "Mulai perjalanan belajar programming Anda",
     icon: BookOpen,
-    path: "/academy",
+    path: "/Academy",
     color: "cyan",
     stats: {
       completion: "0%",

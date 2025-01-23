@@ -21,7 +21,7 @@ export default function LoginPage() {
     setIsLoading(true)
     await new Promise((resolve) => setTimeout(resolve, 1500))
     setIsLoading(false)
-    router.push('/choose-platform')
+    router.push('/Dashboard')
   }
 
   return (
