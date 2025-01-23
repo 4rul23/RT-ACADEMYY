@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { Search, Bell } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import profile from '../../assets/ruanmei.jpg'
+import logo from '../../assets/logos.png'
 export default function AcademyNav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-gray-900/50 backdrop-blur-xl">
@@ -13,7 +14,7 @@ export default function AcademyNav() {
 
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-8">
             <Link href="/academy">
-              <Image src="/images/logos.png" alt="RT Academy" width={32} height={32} priority />
+              <Image src={logo} alt="RT Academy" width={130} height={50} priority />
             </Link>
             <div className="relative">
               <Search className="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
@@ -50,7 +51,7 @@ export default function AcademyNav() {
                 className="flex items-center gap-3 px-3 py-1.5 rounded-lg border border-gray-700 transition-colors"
               >
                 <Image
-                  src="/images/avatar.jpg"
+                  src={profile}
                   alt="User"
                   width={32}
                   height={32}
