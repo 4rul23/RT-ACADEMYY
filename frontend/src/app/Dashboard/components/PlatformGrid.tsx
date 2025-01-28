@@ -44,6 +44,7 @@ const platforms: Platform[] = [
     icon: Beaker,
     path: "/lab",
     color: "blue",
+    isComingSoon: true,
     stats: {
       completion: "0",
       exercises: "0",

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Search, Bell } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import NotificationDropdown from './Notification'
 import profile from '../../assets/ruanmei.jpg'
 import logo from '../../assets/logos.png'
 export default function AcademyNav() {
@@ -11,7 +12,6 @@ export default function AcademyNav() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-gray-900/50 backdrop-blur-xl">
       <div className="px-6 mx-auto max-w-7xl">
         <div className="flex items-center justify-between h-16">
-
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-8">
             <Link href="/academy">
               <Image src={logo} alt="RT Academy" width={130} height={50} priority />
@@ -26,17 +26,14 @@ export default function AcademyNav() {
             </div>
           </motion.div>
 
-          {/* User Section */}
           <div className="flex items-center gap-6">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative p-2 text-gray-400 transition-colors hover:text-white"
             >
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-0 right-0 w-2 h-2 rounded-full bg-cyan-500" />
+            <NotificationDropdown />
             </motion.button>
-
             <div className="flex items-center gap-4">
               <motion.button
                 whileHover={{ scale: 1.02 }}

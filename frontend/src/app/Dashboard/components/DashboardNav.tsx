@@ -1,18 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bell, Settings } from 'lucide-react'
 import Image from 'next/image'
+import Bell from '../../Academy/components/Notification'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import logo from '../../assets/logos.png'
 
 const navItems = [
-  { label: 'Overview', active: true },
-  { label: 'My Learning' },
-  { label: 'Resources' }
+  { label: 'Overview', path: '/Dashboard' },
+  { label: 'User Settings', path: '/Settings' },
+  { label: 'Resources', path: '/Resources' }
 ]
 
 export default function DashboardNav() {
+  const pathname = usePathname()
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -34,40 +37,26 @@ export default function DashboardNav() {
 
             <div className="flex gap-6">
               {navItems.map((item, index) => (
-                <button
+                <Link
                   key={index}
-                  className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors ${
-                    item.active
-                      ? 'bg-cyan-500/10 text-cyan-400'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
+                  href={item.path}
                 >
-                  {item.label}
-                </button>
+                  <div
+                    className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors ${
+                      pathname === item.path
+                        ? 'bg-cyan-500/10 text-cyan-400'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {item.label}
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
 
           <div className="flex items-center gap-6">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative p-2 text-gray-400 transition-colors hover:text-white"
-            >
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-0 right-0 w-2 h-2 rounded-full bg-cyan-500"/>
-            </motion.button>
-
-            <Link href="/settings">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500"
-              >
-                <Settings className="w-4 h-4" />
-                Settings
-              </motion.button>
-            </Link>
+            <Bell />
           </div>
         </div>
       </div>
