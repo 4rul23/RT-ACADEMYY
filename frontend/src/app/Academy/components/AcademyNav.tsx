@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Search, Bell } from 'lucide-react'
+import { Search,} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import NotificationDropdown from './Notification'

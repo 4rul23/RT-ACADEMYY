@@ -23,12 +23,11 @@ export default function AcademyLayout({
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:44px_44px]"/>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent"/>
       </div>
-
-      <AcademyNav />
       <div className={`relative min-h-screen ${GeistMono.className}`}>
-        <div className="flex pt-16"> {/* Added pt-16 for navbar height */}
+      <AcademyNav />
+        <div className="flex pt-16"> 
           <SidebarNav />
-          <main className="flex-1 min-h-screen pl-64 pt-8"> {/* Added pt-8 for content spacing */}
+          <main className="flex-1 min-h-screen pl-64">
             {children}
           </main>
         </div>

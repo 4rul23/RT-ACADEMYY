@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Sidebar from '../components/SideNav'
 import Navbar from '../components/AcademyNav'
 import ModuleHeader from './components/ModuleHeader'
 import ModuleGrid from './components/Modules'

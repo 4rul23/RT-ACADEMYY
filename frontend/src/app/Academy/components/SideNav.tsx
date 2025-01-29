@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Layout, BookOpen, Bookmark, Award, Users } from 'lucide-react'
+import { Layout, BookOpen, Award, Users, Route} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -11,9 +11,9 @@ import logo from '../../assets/ruanmei.jpg'
 const menuItems = [
   { icon: Layout, label: 'Dashboard', path: '/Academy', active: true },
   { icon: BookOpen, label: 'Modul Pembelajaran', path: '/Academy/Module' },
-  { icon: Bookmark, label: 'Learning Path', path: '/Academy/Learning-path' },
+  { icon: Route, label: 'Jalur Pembelajaran', path: '/Academy/Path' },
   { icon: Award, label: 'Sertifikasi', path: '/Academy/Certification' },
-  { icon: Users, label: 'Komunitas', path: '/Academy/Community' }
+  { icon: Users, label: 'Komunitas', path: '/Academy/Community' },
 ]
 
 export default function SidebarNav() {
@@ -64,8 +64,8 @@ export default function SidebarNav() {
         </motion.div>
       </div>
 
-      <div className="space-y-3">
-        {menuItems.map((item, index) => (
+      <div className="space-y-7">
+        {menuItems.map((item) => (
           <Link key={item.path} href={item.path}>
             <motion.div
               whileHover={{ x: 4 }}
