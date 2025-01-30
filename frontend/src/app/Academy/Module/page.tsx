@@ -20,7 +20,6 @@ export default function ModulePage({}: ModulePageProps) {
         <div className="sticky top-0 z-50">
           <Navbar />
         </div>
-
         <div className="flex flex-col min-h-screen">
           <div className="sticky top-16 z-40">
             <ModuleHeader
@@ -28,7 +27,6 @@ export default function ModulePage({}: ModulePageProps) {
               setSearchQuery={setSearchQuery}
             />
           </div>
-
           <div className="flex-1 px-6 py-8">
             <div className="max-w-[1600px] mx-auto space-y-8">
               <FilterSection
@@ -39,7 +37,6 @@ export default function ModulePage({}: ModulePageProps) {
                 selectedType={selectedType}
                 setSelectedType={setSelectedType}
               />
-
               <ModuleGrid
                 filters={{
                   difficulty: selectedDifficulty,

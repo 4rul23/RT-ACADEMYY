@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, FileCode, Clock, Award, TrendingUp, ChevronRight, Lock, CheckCircle, Play } from 'lucide-react'
+import { Code, FileCode, Clock, Award, TrendingUp, ChevronRight, Lock,  Play } from 'lucide-react'
 
 interface LearningStatType {
     label: string

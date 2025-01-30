@@ -1,16 +1,15 @@
 'use client'
-
 import { motion } from 'framer-motion'
-import {Check, ChevronRight, Clock, Trophy,Users, Star } from 'lucide-react'
+import {Check, ChevronRight, Clock, Trophy,Users, Star,} from 'lucide-react'
 import Image from 'next/image'
 import herobg from '../../../app/assets/Preview/preview.svg'
-
+import gitbg from './Path/git-blog-header_1.png'
 const learningPaths = [
   {
     id: 1,
     title: 'Git Version Control',
     description: 'Master Git fundamentals and version control workflow',
-    image: '/images/paths/git-path.jpg',
+    image: gitbg,
     difficulty: 'Beginner',
     category: 'Development Tools',
     enrolled: 2456,
@@ -179,7 +178,8 @@ export default function PathPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900" />
-
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900" />
                 {/* Path Info Overlay */}
                 <div className="absolute bottom-0 inset-x-0 p-6">
                   <div className="flex items-start justify-between">
