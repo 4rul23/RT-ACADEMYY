@@ -133,7 +133,7 @@ export default function FilterSection({ ...props }: FilterSectionProps) {
                 />
               </motion.div>
             )}
-            {/* Ulangi struktur serupa untuk category dan type */}
+=
           </div>
 
           <motion.button

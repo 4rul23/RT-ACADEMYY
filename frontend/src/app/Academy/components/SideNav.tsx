@@ -12,7 +12,7 @@ const menuItems = [
   { icon: Layout, label: 'Dashboard', path: '/Academy', active: true },
   { icon: BookOpen, label: 'Modul Pembelajaran', path: '/Academy/Module' },
   { icon: Route, label: 'Jalur Pembelajaran', path: '/Academy/Path' },
-  { icon: Award, label: 'Sertifikasi', path: '/Academy/Certification' },
+  { icon: Award, label: 'Sertifikasi', path: '/Academy/Sertifikat' },
   { icon: Users, label: 'Komunitas', path: '/Academy/Community' },
 ]
 
