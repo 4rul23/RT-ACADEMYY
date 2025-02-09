@@ -65,21 +65,26 @@ export default function SidebarNav() {
       </div>
 
       <div className="space-y-7">
-        {menuItems.map((item) => (
-          <Link key={item.path} href={item.path}>
-            <motion.div
-              whileHover={{ x: 4 }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                pathname === item.path
-                  ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white border border-cyan-500/20'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <item.icon className={`w-5 h-5 ${pathname === item.path ? "text-cyan-400" : ""}`} />
-              <span className="text-sm font-medium">{item.label}</span>
-            </motion.div>
-          </Link>
-        ))}
+      {menuItems.map((item) => (
+  <Link key={item.path} href={item.path}>
+    <motion.div
+      whileHover={{ x: 4 }}
+      className={`flex flex-col items-start gap-1 px-4 py-3 rounded-lg transition-all ${
+        pathname === item.path
+          ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white border border-cyan-500/20'
+          : 'text-gray-400 hover:text-white hover:bg-white/5'
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        {item.icon && <item.icon className="w-5 h-5" />}
+        <span>{item.label}</span>
+      </div>
+      {item.label.toLowerCase() === 'komunitas' && (
+        <span className="text-xs text-gray-500">COMING SOON</span>
+      )}
+    </motion.div>
+  </Link>
+))}
       </div>
     </motion.div>
   )

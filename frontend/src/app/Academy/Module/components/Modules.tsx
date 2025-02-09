@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Heart, Clock, BookOpen, ArrowRight, } from 'lucide-react'
+import {  Clock, BookOpen, ArrowRight, } from 'lucide-react'
 import Image from 'next/image'
 import css from '../cssv2.svg'
 

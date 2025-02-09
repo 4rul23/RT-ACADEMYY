@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .smooth-transform {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: all;
+    transition-duration: 500ms;
+    will-change: transform;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +27,14 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.contents {
+  transform-origin: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.group {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }

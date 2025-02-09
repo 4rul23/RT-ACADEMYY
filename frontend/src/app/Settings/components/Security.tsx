@@ -22,7 +22,7 @@ export default function SecuritySection() {
         </div>
       </div>
 
-      {/* Account Actions */}
+
       <div className="p-4 rounded-xl border border-red-500/20 bg-gray-800/50">
         <h3 className="text-red-400 mb-4">Danger Zone</h3>
         <button className="w-full py-3 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20">

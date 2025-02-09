@@ -13,7 +13,7 @@ export default function AcademyNav() {
       <div className="px-6 mx-auto max-w-7xl">
         <div className="flex items-center justify-between h-16">
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-8">
-            <Link href="/academy">
+            <Link href="/Dashboard">
               <Image src={logo} alt="RT Academy" width={130} height={50} priority />
             </Link>
             <div className="relative">
