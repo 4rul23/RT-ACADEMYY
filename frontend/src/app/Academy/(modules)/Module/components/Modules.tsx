@@ -39,8 +39,37 @@ export default function ModuleGrid({ filters }: ModuleGridProps) {
       sections: 10,
       progress: 0,
       tags: ["CSS", "Design", "Frontend"]
-    },
-    {
+    }, {
+      title: "CSS Mastery",
+      description: "Learn modern CSS layouts and responsive design",
+      image: css,
+      category: "Frontend",
+      type: "Core",
+      duration: "3 hours",
+      sections: 10,
+      progress: 0,
+      tags: ["CSS", "Design", "Frontend"]
+    }, {
+      title: "CSS Mastery",
+      description: "Learn modern CSS layouts and responsive design",
+      image: css,
+      category: "Frontend",
+      type: "Core",
+      duration: "3 hours",
+      sections: 10,
+      progress: 0,
+      tags: ["CSS", "Design", "Frontend"]
+    }, {
+      title: "CSS Mastery",
+      description: "Learn modern CSS layouts and responsive design",
+      image: css,
+      category: "Frontend",
+      type: "Core",
+      duration: "3 hours",
+      sections: 10,
+      progress: 0,
+      tags: ["CSS", "Design", "Frontend"]
+    }, {
       title: "CSS Mastery",
       description: "Learn modern CSS layouts and responsive design",
       image: css,
@@ -51,50 +80,7 @@ export default function ModuleGrid({ filters }: ModuleGridProps) {
       progress: 0,
       tags: ["CSS", "Design", "Frontend"]
     },
-    {
-      title: "CSS Mastery",
-      description: "Learn modern CSS layouts and responsive design",
-      image: css,
-      category: "Frontend",
-      type: "Core",
-      duration: "3 hours",
-      sections: 10,
-      progress: 0,
-      tags: ["CSS", "Design", "Frontend"]
-    },
-    {
-      title: "CSS Mastery",
-      description: "Learn modern CSS layouts and responsive design",
-      image: css,
-      category: "Frontend",
-      type: "Core",
-      duration: "3 hours",
-      sections: 10,
-      progress: 0,
-      tags: ["CSS", "Design", "Frontend"]
-    },
-    {
-      title: "CSS Mastery",
-      description: "Learn modern CSS layouts and responsive design",
-      image: css,
-      category: "Frontend",
-      type: "Core",
-      duration: "3 hours",
-      sections: 10,
-      progress: 0,
-      tags: ["CSS", "Design", "Frontend"]
-    },
-    {
-      title: "CSS Mastery",
-      description: "Learn modern CSS layouts and responsive design",
-      image: css,
-      category: "Frontend",
-      type: "Core",
-      duration: "3 hours",
-      sections: 10,
-      progress: 0,
-      tags: ["CSS", "Design", "Frontend"]
-    },
+
 
   ]
 

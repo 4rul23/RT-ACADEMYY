@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Navbar from '../components/AcademyNav'
+import Navbar from '../../components/AcademyNav'
 import ModuleHeader from './components/ModuleHeader'
 import ModuleGrid from './components/Modules'
 import FilterSection from './components/Search'

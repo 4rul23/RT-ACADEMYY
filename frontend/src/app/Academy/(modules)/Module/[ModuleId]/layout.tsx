@@ -1,21 +1,18 @@
-import { GeistMono } from 'geist/font/mono'
 import type { Metadata } from 'next'
-import AcademyNav from './components/AcademyNav'
-import ClientLayout from './ClientLayout'
 import React from 'react'
-
+import { GeistMono } from 'geist/font/mono'
 export const metadata: Metadata = {
-  title: 'Academy - RT Academy',
-  description: 'Platform pembelajaran RT Academy',
+  title: 'Module - RT Academy',
+  description: 'Pilihan modul pembelajaran di RT Academy',
 }
 
-export default function AcademyLayout({
+export default function ModuleLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0A1525]">
+ <div className="relative min-h-screen overflow-x-hidden bg-[#0A1525]">
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute rounded-full top-1/4 -left-12 w-96 h-96 bg-cyan-500/20 blur-3xl animate-pulse"/>
         <div className="absolute rounded-full bottom-1/4 -right-12 w-96 h-96 bg-blue-500/20 blur-3xl animate-pulse"/>
@@ -24,9 +21,8 @@ export default function AcademyLayout({
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent"/>
       </div>
       <div className={`relative min-h-screen ${GeistMono.className}`}>
-        <AcademyNav />
-        <ClientLayout>{children}</ClientLayout>
-      </div>
-    </div>
+      {children}
+        </div>
+        </div>
   )
 }

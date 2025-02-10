@@ -1,0 +1,1662 @@
+export const cssModuleData = {
+    id: 'pengenalan-css',
+    title: 'Pengantar CSS',
+    description: 'Kuasai dasar-dasar CSS untuk menata gaya dan tata letak halaman web secara efektif.',
+    sections: [
+      {
+        id: 'selamat-datang',
+        title: 'Selamat Datang di CSS',
+        type: 'video',
+        content: {
+          videoUrl: 'https://www.youtube.com/embed/1PnVor36_40',
+          markdown: `
+  # Selamat Datang di Dasar-Dasar CSS
+
+  Dalam kursus ini, Anda akan mempelajari cara menata gaya halaman web menggunakan CSS (Cascading Style Sheets). Kita akan membahas segala sesuatu mulai dari sintaks dasar hingga konsep lanjutan seperti flexbox dan grid.
+
+  ## Apa yang Akan Anda Pelajari
+  - Sintaks dan selektor dasar CSS
+  - Model kotak dan konsep tata letak
+  - Warna dan tipografi
+  - Flexbox dan positioning
+  - Dasar-dasar desain responsif
+  - Spesifisitas dan Cascade CSS
+  - Unit-unit dalam CSS
+  - Pengantar CSS Grid
+  - Transisi dan Animasi CSS Dasar
+  - Praktik terbaik dalam penulisan CSS
+
+  ## Prasyarat
+  - Pemahaman dasar tentang HTML
+  - Editor teks (disarankan VS Code)
+  - Peramban web (disarankan Chrome atau Firefox)
+
+  ## Mengapa CSS Penting?
+
+  CSS (Cascading Style Sheets) adalah bahasa stylesheet yang digunakan untuk menggambarkan tampilan dan format dokumen yang ditulis dalam HTML. CSS memungkinkan Anda untuk:
+
+  1. **Memisahkan Konten dari Presentasi:** HTML bertanggung jawab atas struktur dan konten halaman web, sementara CSS menangani presentasi visual. Pemisahan ini membuat kode lebih bersih dan lebih mudah dikelola.
+  2. **Konsistensi Desain:** Dengan CSS, Anda dapat menerapkan gaya yang konsisten di seluruh situs web Anda. Ini memastikan pengalaman pengguna yang seragam dan profesional.
+  3. **Responsif dan Aksesibilitas:** CSS memungkinkan Anda membuat desain web yang responsif yang beradaptasi dengan berbagai ukuran layar dan perangkat. CSS juga membantu dalam membuat situs web yang lebih mudah diakses bagi pengguna dengan kebutuhan khusus.
+  4. **Efisiensi dan Kecepatan:** Dengan memusatkan gaya dalam file CSS terpisah, Anda mengurangi ukuran file HTML dan meningkatkan kecepatan pemuatan halaman. Perubahan gaya juga lebih mudah diterapkan dan diperbarui.
+  5. **Kreativitas dan Kustomisasi:** CSS memberikan kontrol penuh atas tampilan visual halaman web Anda. Anda dapat menyesuaikan warna, font, tata letak, animasi, dan banyak aspek visual lainnya untuk menciptakan desain yang unik dan menarik.
+
+  ## Sejarah Singkat CSS
+
+  CSS pertama kali diusulkan pada tahun 1994 oleh Håkon Wium Lie. Pada tahun 1996, W3C (World Wide Web Consortium) menerbitkan spesifikasi CSS level 1 (CSS1). Sejak itu, CSS terus berkembang dengan berbagai level dan modul yang menambahkan fitur-fitur baru. Perkembangan CSS telah memungkinkan web untuk menjadi lebih visual, interaktif, dan mudah diakses.
+
+  Selamat datang di dunia CSS! Mari kita mulai perjalanan kita untuk menguasai seni styling web.
+          `
+        }
+      },
+      {
+        id: 'sintaks-css',
+        title: 'Sintaks & Selektor CSS',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Sintaks & Selektor CSS
+
+  CSS menggunakan sintaks sederhana yang memungkinkan Anda menargetkan elemen HTML dan menerapkan gaya pada elemen tersebut.
+
+  ## Sintaks Dasar
+
+  \`\`\`css
+  selektor {
+    properti: nilai;
+  }
+  \`\`\`
+
+  - **Selektor:** Menentukan elemen HTML mana yang akan distyle.
+  - **Properti:** Aspek gaya yang ingin Anda ubah (misalnya, warna, ukuran font).
+  - **Nilai:** Pengaturan properti (misalnya, biru, 16px).
+
+  ## Jenis-Jenis Selektor
+
+  1. **Selektor Elemen (Element Selector)**
+     Memilih semua elemen HTML tertentu.
+     \`\`\`css
+     p {
+       color: blue; /* Semua paragraf akan berwarna biru */
+     }
+     \`\`\`
+
+  2. **Selektor Kelas (Class Selector)**
+     Memilih elemen HTML dengan atribut kelas tertentu.
+     \`\`\`css
+     .highlight {
+       background-color: yellow; /* Semua elemen dengan class="highlight" akan memiliki latar belakang kuning */
+     }
+     \`\`\`
+     **Penggunaan:** Tambahkan kelas ke elemen HTML Anda: \`<p class="highlight">Teks ini akan disorot.</p>\`
+
+  3. **Selektor ID (ID Selector)**
+     Memilih elemen HTML dengan atribut ID tertentu. ID harus unik dalam satu halaman.
+     \`\`\`css
+     #header {
+       font-size: 24px; /* Elemen dengan id="header" akan memiliki ukuran font 24px */
+     }
+     \`\`\`
+     **Penggunaan:** Tambahkan ID ke elemen HTML Anda: \`<div id="header">Ini adalah header.</div>\`
+
+  4. **Selektor Universal (Universal Selector)**
+     Memilih semua elemen HTML pada halaman.
+     \`\`\`css
+     * {
+       margin: 0;
+       padding: 0; /* Menghapus margin dan padding default dari semua elemen */
+     }
+     \`\`\`
+
+  5. **Selektor Atribut (Attribute Selector)**
+     Memilih elemen HTML berdasarkan keberadaan atau nilai atribut.
+     \`\`\`css
+     /* Memilih semua elemen input dengan atribut type="text" */
+     input[type="text"] {
+       border: 1px solid #ccc;
+     }
+
+     /* Memilih semua elemen a dengan atribut target yang nilainya dimulai dengan "http" */
+     a[target^="http"] {
+       color: orange;
+     }
+
+     /* Memilih semua elemen img dengan atribut alt */
+     img[alt] {
+       border: 2px solid green;
+     }
+     \`\`\`
+
+  6. **Selektor Kombinasi (Combination Selectors)**
+     Menggabungkan selektor untuk target yang lebih spesifik.
+
+     - **Selektor Keturunan (Descendant Selector)**
+       Memilih elemen yang merupakan keturunan dari elemen lain.
+       \`\`\`css
+       div p {
+         margin: 10px; /* Semua elemen <p> di dalam elemen <div> akan memiliki margin 10px */
+       }
+       \`\`\`
+
+     - **Selektor Anak (Child Selector)**
+       Memilih elemen yang merupakan anak langsung dari elemen lain.
+       \`\`\`css
+       div > p {
+         padding: 5px; /* Semua elemen <p> yang merupakan anak langsung dari elemen <div> akan memiliki padding 5px */
+       }
+       \`\`\`
+
+     - **Selektor Saudara Kandung Berdampingan (Adjacent Sibling Selector)**
+       Memilih elemen yang langsung mengikuti elemen lain (saudara kandung yang berdampingan).
+       \`\`\`css
+       h2 + p {
+         font-weight: bold; /* Paragraf pertama yang langsung mengikuti elemen <h2> akan memiliki teks tebal */
+       }
+       \`\`\`
+
+     - **Selektor Saudara Kandung Umum (General Sibling Selector)**
+       Memilih semua elemen saudara kandung yang mengikuti elemen lain.
+       \`\`\`css
+       h2 ~ p {
+         color: green; /* Semua paragraf yang merupakan saudara kandung dari elemen <h2> akan berwarna hijau */
+       }
+       \`\`\`
+
+  7. **Selektor Pseudo-Kelas (Pseudo-Class Selectors)**
+     Memilih elemen berdasarkan keadaan atau posisinya (misalnya, saat dihover, elemen pertama).
+     \`\`\`css
+     a:hover {
+       color: red; /* Tautan akan berubah warna menjadi merah saat dihover */
+     }
+
+     li:first-child {
+       font-weight: bold; /* Item daftar pertama dalam setiap daftar akan memiliki teks tebal */
+     }
+     \`\`\`
+
+  8. **Selektor Pseudo-Elemen (Pseudo-Element Selectors)**
+     Memilih bagian tertentu dari elemen (misalnya, baris pertama paragraf, sebelum atau sesudah elemen).
+     \`\`\`css
+     p::first-line {
+       font-variant: small-caps; /* Baris pertama dari setiap paragraf akan ditampilkan dalam huruf kecil kapital */
+     }
+
+     p::before {
+       content: "Baca: "; /* Menambahkan teks "Baca: " sebelum setiap paragraf */
+       font-weight: bold;
+     }
+     \`\`\`
+
+  ## Tips Praktik
+  - Mulailah dengan selektor sederhana dan pahami cara kerjanya.
+  - Gunakan nama kelas yang bermakna dan deskriptif untuk kemudahan pengelolaan.
+  - Hindari penggunaan selektor ID yang berlebihan, karena selektor kelas lebih fleksibel dan dapat digunakan kembali.
+  - Perhatikan spesifisitas selektor saat Anda menggabungkan berbagai jenis selektor.
+  - Gunakan alat pengembang peramban (browser developer tools) untuk memeriksa selektor CSS dan gaya yang diterapkan.
+
+  Dengan memahami sintaks dan berbagai jenis selektor CSS, Anda akan memiliki dasar yang kuat untuk mulai menata gaya halaman web Anda. Latihan terus-menerus adalah kunci untuk menguasai selektor CSS.
+          `
+        }
+      },
+      {
+        id: 'warna-tipografi',
+        title: 'Warna & Tipografi',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Bekerja dengan Warna & Tipografi
+
+  ## Warna dalam CSS
+
+  Warna adalah elemen penting dalam desain web. CSS menyediakan berbagai cara untuk menentukan warna.
+
+  ### Format Warna
+
+  1. **Nama Warna (Named Colors)**
+     Nama warna yang telah ditentukan sebelumnya (misalnya, \`red\`, \`blue\`, \`green\`, \`black\`, \`white\`).
+     \`\`\`css
+     .element {
+       color: red;
+     }
+     \`\`\`
+
+  2. **Hexadecimal (Hex Codes)**
+     Representasi warna menggunakan kode heksadesimal 6 digit (misalnya, \`#ff0000\` untuk merah, \`#00ff00\` untuk hijau, \`#0000ff\` untuk biru).
+     \`\`\`css
+     .element {
+       background-color: #ff0000; /* Merah */
+     }
+     \`\`\`
+
+  3. **RGB (Red, Green, Blue)**
+     Menentukan warna menggunakan nilai RGB (0-255) untuk komponen merah, hijau, dan biru.
+     \`\`\`css
+     .element {
+       border-color: rgb(255, 0, 0); /* Merah */
+     }
+     \`\`\`
+
+  4. **RGBA (Red, Green, Blue, Alpha)**
+     Sama seperti RGB, tetapi dengan tambahan nilai alpha (0-1) untuk menentukan tingkat opasitas (transparansi).
+     \`\`\`css
+     .element {
+       outline-color: rgba(255, 0, 0, 0.5); /* Merah dengan opasitas 50% */
+     }
+     \`\`\`
+
+  5. **HSL (Hue, Saturation, Lightness)**
+     Menentukan warna menggunakan nilai HSL:
+     - **Hue:** Derajat pada roda warna (0-360). 0 (merah), 120 (hijau), 240 (biru).
+     - **Saturation:** Persentase saturasi (0%-100%). 0% (abu-abu), 100% (warna penuh).
+     - **Lightness:** Persentase kecerahan (0%-100%). 0% (hitam), 100% (putih), 50% (normal).
+     \`\`\`css
+     .element {
+       color: hsl(0, 100%, 50%); /* Merah */
+     }
+     \`\`\`
+
+  6. **HSLA (Hue, Saturation, Lightness, Alpha)**
+     Sama seperti HSL, tetapi dengan tambahan nilai alpha untuk opasitas.
+     \`\`\`css
+     .element {
+       background-color: hsla(0, 100%, 50%, 0.3); /* Merah dengan opasitas 30% */
+     }
+     \`\`\`
+
+  7. **HWB (Hue, Whiteness, Blackness)**
+     Menentukan warna menggunakan nilai HWB:
+     - **Hue:** Derajat pada roda warna (0-360).
+     - **Whiteness:** Persentase keputihan (0%-100%).
+     - **Blackness:** Persentase kehitaman (0%-100%).
+     \`\`\`css
+     .element {
+       color: hwb(0, 0%, 0%); /* Merah */
+     }
+     \`\`\`
+
+  ## Tipografi
+
+  Tipografi adalah seni menata teks agar mudah dibaca, jelas, dan menarik secara visual. CSS menyediakan berbagai properti untuk mengontrol tipografi.
+
+  ### Properti Font
+
+  \`\`\`css
+  body {
+    font-family: 'Arial', sans-serif; /* Jenis huruf utama untuk seluruh halaman */
+    font-size: 16px; /* Ukuran font dasar */
+    line-height: 1.5; /* Tinggi baris untuk keterbacaan */
+    font-weight: normal; /* Ketebalan font (normal, bold, bolder, lighter, atau angka 100-900) */
+    font-style: italic; /* Gaya font (normal, italic, oblique) */
+    text-decoration: none; /* Dekorasi teks (none, underline, overline, line-through) */
+    text-transform: lowercase; /* Transformasi teks (none, uppercase, lowercase, capitalize) */
+    text-align: left; /* Perataan teks (left, right, center, justify) */
+    letter-spacing: 1px; /* Spasi antar huruf */
+    word-spacing: 2px; /* Spasi antar kata */
+  }
+
+  h1 {
+    font-family: 'Georgia', serif; /* Jenis huruf untuk header <h1> */
+    font-size: 2em; /* Ukuran font relatif terhadap ukuran font induk */
+    font-weight: bold; /* Header <h1> tebal */
+  }
+  \`\`\`
+
+  ### Web Fonts (@font-face)
+
+  Untuk menggunakan font yang tidak standar web, Anda dapat menggunakan \`@font-face\` untuk mengimpor font dari file atau layanan web font seperti Google Fonts.
+
+  **Contoh menggunakan Google Fonts:**
+
+  1. **Tautkan Font di HTML:**
+     Tambahkan tautan ke stylesheet Google Fonts di bagian \`<head>\` HTML Anda.
+     \`\`\`html
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+     \`\`\`
+
+  2. **Gunakan Font di CSS:**
+     Gunakan nama font yang diimpor dalam properti \`font-family\`.
+     \`\`\`css
+     body {
+       font-family: 'Roboto', sans-serif;
+     }
+     \`\`\`
+
+  Dengan memahami berbagai format warna dan properti tipografi dalam CSS, Anda dapat menciptakan desain web yang menarik secara visual dan mudah dibaca. Eksperimen dengan berbagai kombinasi warna dan font untuk menemukan gaya yang sesuai dengan proyek Anda.
+          `
+        }
+      },
+      {
+        id: 'model-kotak',
+        title: 'Model Kotak (Box Model)',
+        type: 'video',
+        content: {
+          videoUrl: 'https://www.youtube.com/embed/rIO5326FgPE',
+          markdown: `
+  # Memahami Model Kotak (Box Model)
+
+  Setiap elemen dalam CSS dianggap sebagai kotak. Model kotak (Box Model) adalah konsep fundamental dalam CSS yang menggambarkan struktur kotak yang mengelilingi setiap elemen HTML. Model kotak terdiri dari empat area utama:
+
+  - **Konten (Content):** Isi sebenarnya dari elemen, seperti teks, gambar, atau video. Ukuran konten ditentukan oleh properti \`width\` dan \`height\`.
+  - **Padding:** Ruang kosong di sekitar konten, di dalam batas elemen. Padding digunakan untuk memberikan ruang antara konten dan border. Padding dikontrol oleh properti \`padding\`, \`padding-top\`, \`padding-right\`, \`padding-bottom\`, dan \`padding-left\`.
+  - **Border:** Batas yang mengelilingi padding dan konten. Border dapat memiliki gaya, ketebalan, dan warna. Border dikontrol oleh properti \`border\`, \`border-width\`, \`border-style\`, dan \`border-color\`, serta properti spesifik sisi seperti \`border-top\`, \`border-right\`, dll.
+  - **Margin:** Ruang kosong di luar border, di antara elemen dan elemen tetangga. Margin digunakan untuk memisahkan elemen satu sama lain. Margin dikontrol oleh properti \`margin\`, \`margin-top\`, \`margin-right\`, \`margin-bottom\`, dan \`margin-left\`.
+
+  ## Properti Model Kotak
+
+  \`\`\`css
+  .box {
+    width: 200px;      /* Lebar konten */
+    height: 100px;     /* Tinggi konten */
+    padding: 20px;     /* Padding 20px di semua sisi */
+    border: 2px solid #333; /* Border 2px, solid, warna abu-abu gelap */
+    margin: 10px;      /* Margin 10px di semua sisi */
+  }
+  \`\`\`
+
+  ### Box-Sizing
+
+  Secara default, properti \`width\` dan \`height\` dalam CSS hanya mengatur lebar dan tinggi konten, bukan total lebar dan tinggi elemen. Ini dapat menyebabkan perhitungan tata letak menjadi rumit. Properti \`box-sizing\` memungkinkan Anda mengubah perilaku ini.
+
+  - **\`content-box\` (Nilai Default):**  \`width\` dan \`height\` hanya mengatur ukuran konten. Padding dan border ditambahkan ke ukuran total elemen.
+     \`\`\`css
+     .content-box {
+       box-sizing: content-box; /* Default */
+       width: 200px;
+       padding: 20px;
+       border: 2px solid black;
+       /* Total lebar elemen: 200px (width) + 20px (padding kiri) + 20px (padding kanan) + 2px (border kiri) + 2px (border kanan) = 244px */
+     }
+     \`\`\`
+
+  - **\`border-box\`:** \`width\` dan \`height\` mengatur total lebar dan tinggi elemen, termasuk padding dan border. Ukuran konten akan menyesuaikan secara otomatis.
+     \`\`\`css
+     .border-box {
+       box-sizing: border-box;
+       width: 200px; /* Total lebar termasuk padding dan border */
+       padding: 20px;
+       border: 2px solid black;
+       /* Lebar konten akan otomatis dihitung: 200px (width total) - 20px (padding kiri) - 20px (padding kanan) - 2px (border kiri) - 2px (border kanan) = 156px */
+     }
+     \`\`\`
+
+  **Praktik Terbaik:**
+  Banyak pengembang web menggunakan \`box-sizing: border-box;\` secara global untuk semua elemen untuk membuat perhitungan tata letak lebih intuitif. Ini sering dilakukan dengan menggunakan selektor universal:
+
+  \`\`\`css
+  html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  \`\`\`
+
+  Memahami model kotak sangat penting untuk mengontrol tata letak dan spasi elemen di halaman web Anda. Dengan menguasai properti padding, border, dan margin, serta konsep \`box-sizing\`, Anda dapat menciptakan desain yang tepat dan responsif.
+          `
+        }
+      },
+      {
+        id: 'model-kotak-latihan',
+        title: 'Latihan Model Kotak',
+        type: 'exercise',
+        content: {
+          instructions: 'Buat elemen kartu menggunakan properti model kotak. Kartu harus memiliki padding, border, dan margin. Tambahkan beberapa konten di dalamnya dan tata gaya dengan tepat.',
+          starterCode: `
+  .card {
+    /* Tambahkan gaya Anda di sini */
+  }
+
+  .card-content {
+    /* Tata gaya konten */
+  }`,
+          solution: `
+  .card {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .card-content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }`,
+          markdown: `
+  # Latihan Model Kotak
+
+  Buat komponen kartu menggunakan CSS. Fokus pada:
+  1. Mengatur dimensi yang sesuai
+  2. Menambahkan padding untuk spasi internal
+  3. Menggunakan border untuk definisi
+  4. Menambahkan margin untuk spasi eksternal
+  5. Bonus: Tambahkan sudut membulat dan bayangan
+          `
+        }
+      },
+      {
+        id: 'flexbox-pengantar',
+        title: 'Pengantar Flexbox',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Tata Letak Flexbox
+
+  Flexbox (Flexible Box Layout) adalah metode tata letak satu dimensi yang kuat untuk mengatur item dalam baris atau kolom. Flexbox sangat berguna untuk membuat tata letak yang kompleks dengan mudah, terutama untuk komponen aplikasi web dan antarmuka pengguna.
+
+  ## Dasar-Dasar Flexbox
+
+  Untuk menggunakan flexbox, Anda perlu mengatur properti \`display: flex;\` pada elemen kontainer (parent). Elemen anak langsung dari kontainer ini akan menjadi item flex.
+
+  \`\`\`css
+  .container {
+    display: flex; /* Mengaktifkan flexbox pada kontainer */
+    /* Properti kontainer flexbox di sini */
+  }
+
+  .item {
+    /* Properti item flexbox di sini */
+  }
+  \`\`\`
+
+  ## Properti Kontainer Flexbox
+
+  Properti-properti ini diterapkan pada kontainer flex dan mengontrol perilaku item flex di dalamnya.
+
+  1. **\`flex-direction\`**: Menentukan arah utama item flex dalam kontainer.
+     - \`row\` (default): Mengatur item dalam baris (horizontal).
+     - \`column\`: Mengatur item dalam kolom (vertikal).
+     - \`row-reverse\`: Sama seperti \`row\`, tetapi arahnya terbalik.
+     - \`column-reverse\`: Sama seperti \`column\`, tetapi arahnya terbalik.
+     \`\`\`css
+     .container {
+       display: flex;
+       flex-direction: row; /* Item diatur dalam baris */
+     }
+     \`\`\`
+
+  2. **\`justify-content\`**: Mengatur bagaimana item flex didistribusikan sepanjang sumbu utama kontainer.
+     - \`flex-start\` (default): Item diratakan ke awal sumbu utama.
+     - \`flex-end\`: Item diratakan ke akhir sumbu utama.
+     - \`center\`: Item dipusatkan di sepanjang sumbu utama.
+     - \`space-between\`: Item didistribusikan secara merata; item pertama di awal baris, item terakhir di akhir baris.
+     - \`space-around\`: Item didistribusikan secara merata dengan ruang yang sama di sekitar setiap item.
+     - \`space-evenly\`: Item didistribusikan secara merata dengan ruang yang sama di antara setiap item dan antara item dan tepi kontainer.
+     \`\`\`css
+     .container {
+       display: flex;
+       justify-content: center; /* Item dipusatkan secara horizontal */
+     }
+     \`\`\`
+
+  3. **\`align-items\`**: Mengatur bagaimana item flex diratakan sepanjang sumbu silang (sumbu yang tegak lurus dengan sumbu utama) kontainer.
+     - \`stretch\` (default): Item diregangkan untuk mengisi seluruh tinggi kontainer (pada sumbu silang).
+     - \`flex-start\`: Item diratakan ke awal sumbu silang.
+     - \`flex-end\`: Item diratakan ke akhir sumbu silang.
+     - \`center\`: Item dipusatkan di sepanjang sumbu silang.
+     - \`baseline\`: Item diratakan berdasarkan baseline teks mereka.
+     \`\`\`css
+     .container {
+       display: flex;
+       align-items: center; /* Item dipusatkan secara vertikal */
+     }
+     \`\`\`
+
+  4. **\`flex-wrap\`**: Menentukan apakah item flex harus dibungkus (wrap) jika tidak cukup ruang dalam satu baris atau kolom.
+     - \`nowrap\` (default): Item tidak dibungkus. Mereka mungkin menyusut untuk muat dalam kontainer.
+     - \`wrap\`: Item dibungkus ke baris atau kolom baru jika diperlukan.
+     - \`wrap-reverse\`: Item dibungkus ke baris atau kolom baru dalam urutan terbalik.
+     \`\`\`css
+     .container {
+       display: flex;
+       flex-wrap: wrap; /* Item akan dibungkus ke baris baru jika tidak muat */
+     }
+     \`\`\`
+
+  5. **\`gap\`, \`row-gap\`, \`column-gap\`**: Menentukan jarak antara item flex.
+     - \`gap\`: Menentukan jarak antara baris dan kolom (shorthand untuk \`row-gap\` dan \`column-gap\`).
+     - \`row-gap\`: Menentukan jarak antar baris.
+     - \`column-gap\`: Menentukan jarak antar kolom.
+     \`\`\`css
+     .container {
+       display: flex;
+       gap: 20px; /* Jarak 20px antara item (baris dan kolom) */
+     }
+     \`\`\`
+
+  6. **\`align-content\`**: Mengatur bagaimana baris-baris item flex didistribusikan sepanjang sumbu silang kontainer, ketika ada ruang ekstra (hanya berlaku jika \`flex-wrap: wrap;\` diaktifkan dan ada beberapa baris item).
+     - \`stretch\` (default): Baris-baris diregangkan untuk mengisi ruang ekstra.
+     - \`flex-start\`: Baris-baris diratakan ke awal sumbu silang.
+     - \`flex-end\`: Baris-baris diratakan ke akhir sumbu silang.
+     - \`center\`: Baris-baris dipusatkan di sepanjang sumbu silang.
+     - \`space-between\`: Baris-baris didistribusikan secara merata; baris pertama di awal, baris terakhir di akhir.
+     - \`space-around\`: Baris-baris didistribusikan secara merata dengan ruang yang sama di sekitar setiap baris.
+
+  ## Properti Item Flexbox
+
+  Properti-properti ini diterapkan pada item flex (elemen anak dari kontainer flex) dan mengontrol perilaku item individual.
+
+  1. **\`flex-grow\`**: Menentukan kemampuan item flex untuk tumbuh (memperluas) jika ada ruang kosong di kontainer. Nilai angka menentukan proporsi ruang kosong yang harus diambil item.
+     \`\`\`css
+     .item {
+       flex-grow: 1; /* Item akan mengambil semua ruang kosong yang tersedia secara merata */
+     }
+     \`\`\`
+
+  2. **\`flex-shrink\`**: Menentukan kemampuan item flex untuk menyusut jika tidak cukup ruang di kontainer. Nilai angka menentukan proporsi penyusutan item relatif terhadap item flex lainnya.
+     \`\`\`css
+     .item {
+       flex-shrink: 0; /* Item tidak akan menyusut, bahkan jika tidak cukup ruang */
+     }
+     \`\`\`
+
+  3. **\`flex-basis\`**: Menentukan ukuran awal (panjang atau lebar, tergantung pada \`flex-direction\`) item flex sebelum ruang kosong didistribusikan. Bisa berupa nilai panjang (misalnya, \`px\`, \`%\`) atau kata kunci \`auto\`.
+     \`\`\`css
+     .item {
+       flex-basis: 200px; /* Ukuran awal item adalah 200px */
+     }
+     \`\`\`
+
+  4. **\`flex\`**: Properti shorthand untuk mengatur \`flex-grow\`, \`flex-shrink\`, dan \`flex-basis\` dalam satu deklarasi.
+     - \`flex: none;\`: Sama dengan \`flex: 0 0 auto;\` (item tidak tumbuh atau menyusut, ukuran basis otomatis).
+     - \`flex: auto;\`: Sama dengan \`flex: 1 1 auto;\` (item tumbuh dan menyusut, ukuran basis otomatis).
+     - \`flex: <grow> <shrink> <basis>;\` (misalnya, \`flex: 1 1 200px;\`).
+     - \`flex: <number>;\` (Jika satu nilai angka diberikan, itu diinterpretasikan sebagai \`flex-grow\`, dan \`flex-shrink\` dan \`flex-basis\` diatur ke 1 dan 0% masing-masing, misalnya, \`flex: 1;\` sama dengan \`flex: 1 1 0%;\`).
+
+  5. **\`align-self\`**: Mengganti properti \`align-items\` kontainer untuk item flex individual. Memungkinkan Anda untuk meratakan item flex secara berbeda dari item flex lainnya di dalam kontainer. Nilai yang mungkin sama dengan \`align-items\` (\`auto\`, \`stretch\`, \`flex-start\`, \`flex-end\`, \`center\`, \`baseline\`).
+     \`\`\`css
+     .item-special {
+       align-self: flex-start; /* Item ini akan diratakan ke awal sumbu silang, terlepas dari pengaturan align-items kontainer */
+     }
+     \`\`\`
+
+  6. **\`order\`**: Mengontrol urutan item flex dalam kontainer. Secara default, item flex ditampilkan dalam urutan sumber HTML. Properti \`order\` memungkinkan Anda mengubah urutan ini. Item dengan nilai \`order\` yang lebih kecil akan muncul lebih dulu.
+     \`\`\`css
+     .item-3 {
+       order: -1; /* Item ini akan ditampilkan pertama, meskipun berada di posisi ketiga dalam kode HTML */
+     }
+     \`\`\`
+
+  ## Contoh Dasar Flexbox
+  \`\`\`css
+  .container {
+    display: flex;
+    justify-content: center; /* Pusatkan item secara horizontal */
+    align-items: center; /* Pusatkan item secara vertikal */
+    gap: 20px; /* Jarak antar item 20px */
+  }
+
+  .item {
+    flex: 1; /* Setiap item mengambil ruang yang sama */
+  }
+  \`\`\`
+
+  ## Properti Umum Flexbox
+  - \`flex-direction\`
+  - \`justify-content\`
+  - \`align-items\`
+  - \`gap\`
+  - \`flex-wrap\`
+  - \`flex-grow\`
+  - \`flex-shrink\`
+  - \`flex-basis\`
+  - \`align-self\`
+  - \`order\`
+
+  Flexbox adalah alat yang sangat berguna untuk tata letak web modern. Dengan memahami properti kontainer dan item flexbox, Anda dapat membuat tata letak yang fleksibel dan responsif dengan mudah. Latihan dan eksperimen akan membantu Anda menguasai flexbox sepenuhnya.
+          `
+        }
+      },
+      {
+        id: 'flexbox-latihan',
+        title: 'Latihan Tata Letak Flexbox',
+        type: 'exercise',
+        content: {
+          instructions: 'Buat bilah navigasi menggunakan flexbox. Navigasi harus berisi logo di kiri dan item menu di kanan, semuanya berpusat secara vertikal.',
+          starterCode: `
+  .navbar {
+    /* Tambahkan gaya flexbox */
+  }
+
+  .logo {
+    /* Tata gaya logo */
+  }
+
+  .menu {
+    /* Tata gaya kontainer item menu */
+  }
+
+  .menu-item {
+    /* Tata gaya item menu individual */
+  }`,
+          solution: `
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .menu {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .menu-item {
+    color: #666;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+
+  .menu-item:hover {
+    color: #000;
+  }`,
+          markdown: `
+  # Latihan Bilah Navigasi
+
+  Buat bilah navigasi responsif menggunakan flexbox:
+  1. Gunakan flexbox untuk tata letak
+  2. Spasi item dengan benar
+  3. Pusatkan item secara vertikal
+  4. Tambahkan efek hover
+  5. Buat responsif
+          `
+        }
+      },
+      {
+        id: 'desain-responsif',
+        title: 'Dasar-Dasar Desain Responsif',
+        type: 'video',
+        content: {
+          videoUrl: 'https://www.youtube.com/embed/VQraviuwbzU',
+          markdown: `
+  # Desain Responsif
+
+  Pelajari cara membuat situs web Anda beradaptasi dengan ukuran layar yang berbeda. Desain responsif adalah pendekatan untuk desain web yang bertujuan untuk membuat halaman web terlihat dan berfungsi dengan baik di berbagai perangkat dan ukuran layar, mulai dari desktop besar hingga ponsel pintar kecil.
+
+  ## Viewport Meta Tag
+
+  Langkah pertama dalam membuat desain responsif adalah mengatur viewport meta tag di bagian \`<head>\` HTML Anda. Viewport meta tag mengontrol bagaimana peramban web menampilkan halaman pada berbagai perangkat.
+
+  \`\`\`html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  \`\`\`
+
+  - \`width=device-width\`: Mengatur lebar viewport agar sama dengan lebar perangkat.
+  - \`initial-scale=1.0\`: Mengatur tingkat zoom awal saat halaman pertama kali dimuat.
+
+  ## Media Queries
+
+  Media queries adalah fitur CSS yang memungkinkan Anda menerapkan gaya yang berbeda berdasarkan karakteristik perangkat tampilan, seperti lebar layar, tinggi layar, orientasi (landscape atau portrait), dan resolusi.
+
+  ### Sintaks Media Query
+
+  \`\`\`css
+  @media (media-feature) {
+    /* Gaya CSS yang diterapkan ketika kondisi media terpenuhi */
+  }
+  \`\`\`
+
+  **Contoh Media Queries:**
+
+  \`\`\`css
+  /* Mobile first approach - Gaya default untuk layar kecil */
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Tablet - Gaya yang diterapkan untuk layar dengan lebar minimal 768px */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+      margin: 0 auto; /* Pusatkan kontainer di layar yang lebih besar */
+    }
+  }
+
+  /* Desktop - Gaya yang diterapkan untuk layar dengan lebar minimal 1024px */
+  @media (min-width: 1024px) {
+    .container {
+      width: 970px;
+    }
+  }
+  \`\`\`
+
+  ### Fitur Media Umum
+
+  - **\`width\` dan \`height\`**: Lebar dan tinggi viewport.
+  - **\`min-width\` dan \`max-width\`**: Lebar minimum dan maksimum viewport.
+  - **\`min-height\` dan \`max-height\`**: Tinggi minimum dan maksimum viewport.
+  - **\`orientation\`**: Orientasi perangkat (\`portrait\` atau \`landscape\`).
+  - **\`resolution\`**: Resolusi layar (misalnya, \`72dpi\`, \`300dpi\`).
+  - **\`aspect-ratio\`**: Rasio aspek viewport (misalnya, \`16/9\`).
+  - **\`hover\`**: Mendeteksi kemampuan perangkat untuk hover (\`hover\` atau \`none\`). Ini berguna untuk membedakan antara perangkat mouse dan layar sentuh.
+  - **\`pointer\`**: Mendeteksi jenis pointer utama yang digunakan perangkat (\`coarse\`, \`fine\`, atau \`none\`).
+
+  ### Jenis Media
+
+  Media queries juga dapat menargetkan jenis media tertentu:
+
+  - \`all\` (default): Untuk semua jenis media.
+  - \`screen\`: Untuk layar komputer, tablet, ponsel pintar, dll.
+  - \`print\`: Untuk printer.
+  - \`speech\`: Untuk pembaca layar.
+
+  **Contoh Jenis Media:**
+
+  \`\`\`css
+  /* Gaya untuk layar */
+  @media screen and (min-width: 768px) {
+    /* Gaya khusus layar tablet dan desktop */
+  }
+
+  /* Gaya untuk cetak */
+  @media print {
+    /* Gaya khusus cetak */
+    body {
+      font-size: 12pt;
+    }
+  }
+  \`\`\`
+
+  ### Breakpoints
+
+  Breakpoints adalah titik lebar layar di mana desain situs web Anda berubah untuk beradaptasi dengan ukuran layar yang berbeda. Breakpoints umum meliputi:
+
+  - **Ekstra kecil (Ponsel):** Kurang dari 576px (biasanya tidak perlu media query khusus, karena ini adalah gaya dasar mobile-first)
+  - **Kecil (Ponsel besar):** 576px - 767px (\`@media (min-width: 576px) { ... }\`)
+  - **Menengah (Tablet):** 768px - 991px (\`@media (min-width: 768px) { ... }\`)
+  - **Besar (Desktop):** 992px - 1199px (\`@media (min-width: 992px) { ... }\`)
+  - **Ekstra besar (Desktop besar):** 1200px ke atas (\`@media (min-width: 1200px) { ... }\`)
+
+  **Contoh Breakpoints dalam Kode:**
+
+  \`\`\`css
+  /* Gaya default untuk mobile (di bawah 576px) */
+  body {
+    font-size: 14px;
+  }
+
+  /* Ponsel besar (576px dan lebih besar) */
+  @media (min-width: 576px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
+  /* Tablet (768px dan lebih besar) */
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+  /* Desktop (992px dan lebih besar) */
+  @media (min-width: 992px) {
+    body {
+      font-size: 20px;
+    }
+  }
+  \`\`\`
+
+  ## Pendekatan Mobile-First vs. Desktop-First
+
+  - **Mobile-First:** Mulai dengan mendesain untuk perangkat mobile terlebih dahulu, kemudian tambahkan gaya untuk layar yang lebih besar menggunakan media queries \`min-width\`. Ini adalah pendekatan yang direkomendasikan karena memastikan pengalaman yang baik untuk pengguna mobile, yang seringkali memiliki koneksi internet yang lebih lambat dan perangkat yang lebih kecil.
+  - **Desktop-First:** Mulai dengan mendesain untuk desktop, kemudian gunakan media queries \`max-width\` untuk menyesuaikan gaya untuk layar yang lebih kecil. Pendekatan ini kurang umum karena seringkali menghasilkan pekerjaan ekstra untuk mengoptimalkan tampilan mobile.
+
+  ## Praktik Terbaik Desain Responsif
+
+  - **Gunakan Unit Relatif:** Gunakan unit relatif seperti \`em\`, \`rem\`, dan \`%\` untuk ukuran font dan tata letak agar skala dengan baik di berbagai ukuran layar.
+  - **Flexbox dan Grid:** Manfaatkan flexbox dan CSS Grid untuk membuat tata letak yang fleksibel dan responsif.
+  - **Uji di Berbagai Perangkat:** Selalu uji situs web Anda di berbagai perangkat dan ukuran layar untuk memastikan desain responsif berfungsi dengan baik.
+  - **Gunakan Alat Pengembang Peramban:** Alat pengembang peramban memiliki mode perangkat yang memungkinkan Anda untuk mensimulasikan berbagai ukuran layar dan perangkat untuk pengujian responsif.
+
+  Desain responsif adalah keterampilan penting dalam pengembangan web modern. Dengan menggunakan viewport meta tag dan media queries, Anda dapat membuat situs web yang dapat diakses dan terlihat baik di semua perangkat.
+          `
+        }
+      },
+      {
+        id: 'spesifisitas-cascade',
+        title: 'Spesifisitas dan Cascade CSS',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Spesifisitas dan Cascade CSS
+
+  ## Spesifisitas CSS
+
+  Spesifisitas adalah serangkaian aturan yang menentukan gaya CSS mana yang diterapkan ke elemen HTML ketika ada konflik gaya (yaitu, ketika beberapa aturan CSS dapat diterapkan ke elemen yang sama). Peramban web menggunakan spesifisitas untuk menentukan aturan mana yang "menang" dan diterapkan.
+
+  ### Hierarki Spesifisitas
+
+  Spesifisitas dihitung berdasarkan jenis selektor CSS, dalam urutan prioritas berikut (dari tertinggi ke terendah):
+
+  1. **Inline Styles:** Gaya yang diterapkan langsung pada elemen HTML menggunakan atribut \`style\`. Ini memiliki spesifisitas tertinggi.
+     \`\`\`html
+     <p style="color: red;">Teks ini berwarna merah karena inline style.</p>
+     \`\`\`
+
+  2. **ID Selectors:** Selektor ID (\`#id\`).
+     \`\`\`css
+     #judul-utama {
+       color: blue; /* Lebih spesifik daripada class atau element selector */
+     }
+     \`\`\`
+
+  3. **Class selectors, attribute selectors, pseudo-classes:**
+     - Class selectors (\`.class\`)
+     - Attribute selectors (\`[attribute]\`, \`[attribute="value"]\`)
+     - Pseudo-classes (\`:hover\`, \`:focus\`, \`:nth-child()\`)
+     \`\`\`css
+     .teks-penting {
+       color: green; /* Lebih spesifik daripada element selector */
+     }
+
+     input[type="text"] {
+       border: 1px solid black; /* Lebih spesifik daripada element selector input tanpa atribut type */
+     }
+
+     a:hover {
+       text-decoration: underline; /* Lebih spesifik daripada element selector a */
+     }
+     \`\`\`
+
+  4. **Element selectors and pseudo-elements:**
+     - Element selectors (\`element\`, misalnya, \`p\`, \`div\`, \`span\`)
+     - Pseudo-elements (\`::before\`, \`::after\`, \`::first-line\`)
+     \`\`\`css
+     p {
+       color: gray; /* Spesifisitas paling rendah di antara contoh-contoh ini */
+     }
+
+     p::first-line {
+       font-weight: bold; /* Lebih spesifik daripada element selector p */
+     }
+     \`\`\`
+
+  5. **Universal selector (\`*\`), combinators (\`+\`, \`>\`, \`~\`), dan negation pseudo-class (\`:not()\`)**: Ini tidak berkontribusi pada spesifisitas, tetapi selektor dalam \`:not()\` dihitung.
+
+  ### Perhitungan Spesifisitas
+
+  Spesifisitas dihitung sebagai bobot numerik, seringkali direpresentasikan sebagai tiga atau empat nilai:
+
+  - **Inline styles:** 1, 0, 0, 0 (tertinggi)
+  - **ID selectors:** 0, 1, 0, 0
+  - **Class selectors, attribute selectors, pseudo-classes:** 0, 0, 1, 0
+  - **Element selectors, pseudo-elements:** 0, 0, 0, 1
+  - **Universal selector, combinators, negation pseudo-class:** 0, 0, 0, 0 (terendah)
+
+  Ketika peramban web membandingkan dua aturan CSS yang bertentangan, ia membandingkan bobot spesifisitasnya. Aturan dengan bobot yang lebih tinggi akan diterapkan. Jika bobotnya sama, maka aturan yang muncul terakhir dalam stylesheet (atau dalam \`<style>\` tag atau inline styles) akan diterapkan (aturan cascade).
+
+  **Contoh Perhitungan Spesifisitas:**
+
+  1. \`* {}\` - Spesifisitas: 0,0,0,0
+  2. \`li {}\` - Spesifisitas: 0,0,0,1
+  3. \`li:first-line {}\` - Spesifisitas: 0,0,0,2
+  4. \`ul li {}\` - Spesifisitas: 0,0,0,2
+  5. \`ul ol+li {}\` - Spesifisitas: 0,0,0,3
+  6. \`h1 + *[rel=up]{}\` - Spesifisitas: 0,0,1,1
+  7. \`ul ol li.merah {}\` - Spesifisitas: 0,0,1,3
+  8. \`li.merah.tebal {}\` - Spesifisitas: 0,0,2,1
+  9. \`#kontainer > ul li {}\` - Spesifisitas: 0,1,0,2
+  10. \`#kontainer ol li {}\` - Spesifisitas: 0,1,0,2
+  11. \`#footer #navigation .item {}\` - Spesifisitas: 0,2,1,0
+  12. \`body #kontainer #konten .teks-utama p {}\` - Spesifisitas: 0,2,2,2
+  13. \`<li style="color: merah;">\` - Spesifisitas: 1,0,0,0 (tertinggi)
+
+  ## Cascade CSS
+
+  Cascade adalah mekanisme di CSS yang menentukan bagaimana gaya diterapkan ketika ada beberapa sumber gaya yang berbeda yang dapat memengaruhi elemen yang sama. Cascade bekerja bersama dengan spesifisitas untuk menentukan aturan gaya akhir.
+
+  ### Sumber Cascade
+
+  Urutan prioritas sumber gaya (dari terendah ke tertinggi):
+
+  1. **User-agent stylesheets (Default browser styles):** Gaya default yang diterapkan oleh peramban web.
+  2. **User stylesheets:** Gaya yang ditentukan oleh pengguna (misalnya, melalui pengaturan peramban atau ekstensi).
+  3. **Author stylesheets (Developer styles):** Gaya yang ditentukan oleh pengembang web. Ini adalah gaya yang Anda tulis dalam file CSS, \`<style>\` tag, atau inline styles.
+     - **Linked stylesheets (External CSS files):** File CSS eksternal yang ditautkan ke HTML menggunakan \`<link>\` tag.
+     - **Embedded stylesheets (Internal CSS):** Gaya yang didefinisikan di dalam \`<style>\` tag dalam dokumen HTML.
+     - **Inline styles:** Gaya yang diterapkan langsung pada elemen HTML menggunakan atribut \`style\`.
+
+  ### Aturan Cascade
+
+  Ketika ada konflik gaya, peramban web menggunakan aturan cascade berikut untuk menentukan gaya yang diterapkan:
+
+  1. **Specificity:** Seperti yang dijelaskan sebelumnya, aturan dengan spesifisitas yang lebih tinggi menang.
+  2. **Origin and Order:** Jika spesifisitas sama, maka urutan sumber gaya menentukan. Gaya dari sumber yang lebih tinggi dalam urutan prioritas (user-agent < user < author) menang. Dalam author stylesheets, urutan aturan dalam stylesheet atau dokumen HTML juga penting. Aturan yang didefinisikan terakhir menang jika spesifisitas sama.
+  3. **Importance:** Aturan yang ditandai dengan \`!important\` memiliki prioritas tertinggi dan mengesampingkan aturan lain, bahkan jika aturan lain memiliki spesifisitas yang lebih tinggi. Penggunaan \`!important\` sebaiknya dihindari kecuali sangat diperlukan, karena dapat membuat CSS lebih sulit dikelola dan diprediksi.
+
+  **Contoh Cascade:**
+
+  Misalkan Anda memiliki aturan CSS berikut:
+
+  \`\`\`css
+  /* style.css */
+  p {
+    color: gray; /* Aturan 1: Element selector, spesifisitas rendah */
+  }
+
+  .teks-penting {
+    color: green; /* Aturan 2: Class selector, spesifisitas lebih tinggi */
+  }
+
+  #judul-utama {
+    color: blue; /* Aturan 3: ID selector, spesifisitas tertinggi */
+  }
+  \`\`\`
+
+  Dan HTML berikut:
+
+  \`\`\`html
+  <p style="color: red;">Paragraf ini akan berwarna merah (inline style).</p>
+  <p class="teks-penting">Paragraf ini akan berwarna hijau (class selector).</p>
+  <p id="judul-utama">Paragraf ini akan berwarna biru (ID selector).</p>
+  <p>Paragraf ini akan berwarna abu-abu (element selector, gaya default).</p>
+  \`\`\`
+
+  Dalam contoh ini:
+
+  - Paragraf pertama berwarna merah karena inline style memiliki spesifisitas tertinggi.
+  - Paragraf kedua berwarna hijau karena class selector memiliki spesifisitas lebih tinggi daripada element selector.
+  - Paragraf ketiga berwarna biru karena ID selector memiliki spesifisitas lebih tinggi daripada class dan element selector.
+  - Paragraf keempat berwarna abu-abu karena hanya ada element selector yang diterapkan, dan itu adalah gaya default dari stylesheet eksternal.
+
+  ## Tips Mengelola Spesifisitas dan Cascade
+
+  - **Gunakan Spesifisitas Secara Bijak:** Hindari spesifisitas yang terlalu tinggi kecuali benar-benar diperlukan. Gunakan class selectors sebanyak mungkin, dan hindari penggunaan ID selectors dan inline styles kecuali untuk kasus-kasus khusus.
+  - **Struktur CSS dengan Baik:** Atur stylesheet Anda secara logis dan terstruktur. Gunakan komentar untuk menjelaskan bagian-bagian kode.
+  - **Hindari \`!important\`: ** Sebisa mungkin hindari penggunaan \`!important\` kecuali untuk mengesampingkan gaya pihak ketiga atau dalam utilitas CSS yang sangat spesifik.
+  - **Gunakan Alat Pengembang Peramban:** Alat pengembang peramban sangat berguna untuk memeriksa spesifisitas aturan CSS dan memahami mengapa gaya tertentu diterapkan.
+
+  Memahami spesifisitas dan cascade CSS adalah kunci untuk menulis CSS yang efektif dan mudah dikelola. Dengan memahami aturan-aturan ini, Anda dapat mengontrol bagaimana gaya diterapkan pada halaman web Anda dan mengatasi konflik gaya dengan lebih baik.
+          `
+        }
+      },
+      {
+        id: 'unit-css',
+        title: 'Unit dalam CSS',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Unit dalam CSS
+
+  Unit dalam CSS digunakan untuk menentukan ukuran dan panjang properti CSS, seperti ukuran font, margin, padding, lebar, dan tinggi. Memahami berbagai jenis unit CSS sangat penting untuk membuat tata letak yang fleksibel dan responsif.
+
+  ## Jenis-Jenis Unit CSS
+
+  Unit CSS dapat dibagi menjadi dua kategori utama:
+
+  1. **Unit Absolut (Absolute Units):**
+     Unit absolut mewakili ukuran fisik yang tetap. Ukuran yang ditentukan dengan unit absolut akan selalu sama, terlepas dari ukuran layar atau faktor lainnya.
+
+     - **\`px\` (Pixels):** Pixel adalah unit yang paling umum digunakan dalam CSS. Satu pixel mewakili satu titik pada layar perangkat.
+       \`\`\`css
+       .element {
+         width: 200px; /* Lebar elemen 200 pixel */
+         font-size: 16px; /* Ukuran font 16 pixel */
+       }
+       \`\`\`
+
+     - **\`pt\` (Points):** Point adalah unit tradisional dalam tipografi. 1 point sama dengan 1/72 inch. Unit ini lebih sering digunakan untuk media cetak.
+       \`\`\`css
+       body {
+         font-size: 12pt; /* Ukuran font 12 point */
+       }
+       \`\`\`
+
+     - **\`pc\` (Picas):** Pica adalah unit tipografi lainnya. 1 pica sama dengan 12 points atau 1/6 inch.
+       \`\`\`css
+       .container {
+         margin-left: 2pc; /* Margin kiri 2 picas */
+       }
+       \`\`\`
+
+     - **\`in\` (Inches):** Inch adalah unit ukuran panjang yang umum. 1 inch sama dengan 2.54 centimeter.
+       \`\`\`css
+       .box {
+         width: 1in; /* Lebar kotak 1 inch */
+       }
+       \`\`\`
+
+     - **\`cm\` (Centimeters):** Centimeter adalah unit ukuran panjang metrik. 1 centimeter sama dengan 10 millimeters.
+       \`\`\`css
+       .element {
+         margin-bottom: 1cm; /* Margin bawah 1 centimeter */
+       }
+       \`\`\`
+
+     - **\`mm\` (Millimeters):** Millimeter adalah unit ukuran panjang metrik yang lebih kecil. 1 millimeter sama dengan 1/10 centimeter.
+       \`\`\`css
+       .line {
+         border-bottom: 1mm solid black; /* Border bawah 1 millimeter tebal */
+       }
+       \`\`\`
+
+  2. **Unit Relatif (Relative Units):**
+     Unit relatif mewakili ukuran relatif terhadap ukuran elemen lain atau ukuran viewport. Unit relatif sangat penting untuk membuat desain responsif karena mereka memungkinkan elemen untuk skala dengan baik di berbagai ukuran layar.
+
+     - **\`em\` (Ems):** Unit \`em\` relatif terhadap ukuran font elemen induk (parent). Jika ukuran font elemen induk adalah 16px, maka \`1em\` sama dengan 16px. Jika Anda mengatur ukuran font elemen menjadi \`2em\`, maka ukuran font elemen tersebut akan menjadi 2 kali ukuran font induknya.
+       \`\`\`css
+       body {
+         font-size: 16px; /* Ukuran font dasar untuk body */
+       }
+
+       h1 {
+         font-size: 2em; /* Ukuran font <h1> adalah 2 kali ukuran font body (32px) */
+       }
+
+       p {
+         font-size: 1.5em; /* Ukuran font <p> adalah 1.5 kali ukuran font body (24px) */
+         padding: 1em; /* Padding 1em sama dengan ukuran font <p> (24px) */
+       }
+       \`\`\`
+
+     - **\`rem\` (Root Ems):** Unit \`rem\` relatif terhadap ukuran font elemen root (elemen \`<html>\`). Ini berbeda dengan \`em\` yang relatif terhadap elemen induk. Menggunakan \`rem\` membuat ukuran font lebih mudah diprediksi dan dikelola di seluruh situs web.
+       \`\`\`css
+       html {
+         font-size: 16px; /* Ukuran font root */
+       }
+
+       h1 {
+         font-size: 2rem; /* Ukuran font <h1> adalah 2 kali ukuran font root (32px) */
+       }
+
+       p {
+         font-size: 1.5rem; /* Ukuran font <p> adalah 1.5 kali ukuran font root (24px) */
+         padding: 1rem; /* Padding 1rem sama dengan ukuran font root (16px) */
+       }
+       \`\`\`
+
+     - **\`%\` (Percentage):** Unit persentase relatif terhadap ukuran elemen induk. Untuk properti seperti \`width\` dan \`height\`, persentase relatif terhadap ukuran konten elemen induk. Untuk properti seperti \`font-size\`, persentase relatif terhadap ukuran font elemen induk.
+       \`\`\`css
+       .container {
+         width: 50%; /* Lebar kontainer 50% dari lebar elemen induk */
+       }
+
+       p {
+         font-size: 150%; /* Ukuran font <p> 150% dari ukuran font induk */
+       }
+       \`\`\`
+
+     - **Viewport-percentage lengths (vw, vh, vmin, vmax):** Unit-unit ini relatif terhadap ukuran viewport (area tampilan peramban web).
+
+       - **\`vw\` (Viewport Width):** 1vw sama dengan 1% dari lebar viewport.
+         \`\`\`css
+         .header {
+           width: 100vw; /* Lebar header 100% dari lebar viewport */
+         }
+         \`\`\`
+
+       - **\`vh\` (Viewport Height):** 1vh sama dengan 1% dari tinggi viewport.
+         \`\`\`css
+         .sidebar {
+           height: 100vh; /* Tinggi sidebar 100% dari tinggi viewport */
+         }
+         \`\`\`
+
+       - **\`vmin\` (Viewport Minimum):** 1vmin sama dengan 1% dari dimensi viewport yang lebih kecil (lebar atau tinggi).
+         \`\`\`css
+         .square {
+           width: 50vmin; /* Lebar dan tinggi kotak akan selalu 50% dari dimensi viewport yang lebih kecil */
+           height: 50vmin;
+         }
+         \`\`\`
+
+       - **\`vmax\` (Viewport Maximum):** 1vmax sama dengan 1% dari dimensi viewport yang lebih besar (lebar atau tinggi).
+         \`\`\`css
+         .cover {
+           width: 100vmax; /* Lebar cover akan selalu 100% dari dimensi viewport yang lebih besar */
+           height: 100vmax;
+         }
+         \`\`\`
+
+     - **\`fr\` (Fraction):** Unit \`fr\` digunakan dalam CSS Grid Layout untuk merepresentasikan fraksi dari ruang yang tersedia dalam kontainer grid. Ini memungkinkan Anda untuk mendistribusikan ruang secara fleksibel di antara kolom atau baris grid.
+       \`\`\`css
+       .grid-container {
+         display: grid;
+         grid-template-columns: 1fr 2fr 1fr; /* Membuat 3 kolom, kolom tengah dua kali lebih lebar dari kolom pertama dan ketiga */
+       }
+       \`\`\`
+
+  ## Memilih Unit yang Tepat
+
+  - **Untuk Ukuran Font:**
+    - Gunakan \`rem\` untuk ukuran font dasar dan skala font di seluruh situs web. Ini memudahkan untuk menyesuaikan ukuran font untuk aksesibilitas dan responsivitas.
+    - Gunakan \`em\` untuk ukuran font komponen lokal yang perlu skala relatif terhadap ukuran font induknya.
+
+  - **Untuk Tata Letak dan Spasi:**
+    - Gunakan \`%\` dan viewport-percentage lengths (\`vw\`, \`vh\`, \`vmin\`, \`vmax\`) untuk membuat tata letak responsif yang beradaptasi dengan ukuran layar.
+    - Gunakan \`em\` atau \`rem\` untuk margin dan padding agar spasi skala dengan ukuran font, menciptakan desain yang lebih proporsional.
+    - Gunakan \`fr\` dalam CSS Grid untuk tata letak grid yang fleksibel.
+
+  - **Unit Absolut (px, pt, dll.):**
+    - Hindari penggunaan unit absolut untuk ukuran font dan tata letak utama, karena mereka tidak fleksibel dan tidak responsif.
+    - Unit absolut mungkin berguna untuk properti seperti \`border-width\` atau untuk media cetak di mana ukuran fisik yang tepat penting.
+
+  Memahami dan menggunakan unit CSS dengan tepat adalah kunci untuk membuat desain web yang fleksibel, responsif, dan mudah diakses. Eksperimen dengan berbagai unit dan lihat bagaimana mereka memengaruhi tata letak dan tampilan elemen Anda.
+          `
+        }
+      },
+      {
+        id: 'posisi-css',
+        title: 'Positioning dalam CSS',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Positioning dalam CSS
+
+  Positioning dalam CSS memungkinkan Anda mengontrol posisi elemen HTML di halaman web. CSS menyediakan beberapa skema positioning yang berbeda, yang memungkinkan Anda untuk membuat tata letak yang kompleks dan efek visual yang menarik.
+
+  ## Jenis-Jenis Positioning
+
+  Properti \`position\` dalam CSS menentukan jenis positioning yang digunakan untuk elemen. Ada lima nilai utama untuk properti \`position\`:
+
+  1. **\`static\` (Default):**
+     - Ini adalah nilai default untuk semua elemen HTML.
+     - Elemen diposisikan dalam aliran dokumen normal.
+     - Properti \`top\`, \`right\`, \`bottom\`, dan \`left\` tidak berpengaruh pada elemen dengan \`position: static;\`.
+     \`\`\`css
+     .static-element {
+       position: static; /* Posisi default */
+     }
+     \`\`\`
+
+  2. **\`relative\` (Relatif):**
+     - Elemen diposisikan relatif terhadap posisi normalnya dalam aliran dokumen statis.
+     - Menggunakan properti \`top\`, \`right\`, \`bottom\`, dan \`left\` akan menggeser elemen dari posisi normalnya. Pergeseran ini tidak memengaruhi tata letak elemen lain; ruang yang awalnya ditempati elemen tetap dipertahankan.
+     - Sering digunakan untuk menyesuaikan posisi elemen sedikit dari posisi normalnya atau sebagai kontainer positioning untuk elemen anak yang diposisikan secara absolut.
+     \`\`\`css
+     .relative-element {
+       position: relative;
+       top: 20px; /* Geser 20px dari posisi normalnya ke bawah */
+       left: 30px; /* Geser 30px dari posisi normalnya ke kanan */
+     }
+     \`\`\`
+
+  3. **\`absolute\` (Absolut):**
+     - Elemen dihapus dari aliran dokumen normal dan tidak memengaruhi tata letak elemen lain.
+     - Diposisikan relatif terhadap **ancestor positioned terdekat**. Ancestor positioned adalah elemen induk atau leluhur yang memiliki \`position\` selain \`static\` (misalnya, \`relative\`, \`absolute\`, \`fixed\`, \`sticky\`). Jika tidak ada ancestor positioned, elemen diposisikan relatif terhadap elemen \`<html>\` (viewport awal).
+     - Menggunakan properti \`top\`, \`right\`, \`bottom\`, dan \`left\` untuk menentukan posisi elemen relatif terhadap tepi ancestor positioned.
+     - Sering digunakan untuk membuat tata letak yang kompleks, elemen overlay, atau elemen yang perlu diposisikan secara tepat di dalam kontainer.
+     \`\`\`css
+     .container {
+       position: relative; /* Kontainer positioned untuk elemen absolut di dalamnya */
+       width: 300px;
+       height: 200px;
+       border: 1px solid black;
+     }
+
+     .absolute-element {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       background-color: yellow;
+       padding: 10px;
+     }
+     \`\`\`
+
+  4. **\`fixed\` (Tetap):**
+     - Elemen dihapus dari aliran dokumen normal dan tidak memengaruhi tata letak elemen lain.
+     - Diposisikan relatif terhadap viewport (jendela peramban web).
+     - Elemen tetap berada di posisi yang sama bahkan ketika halaman di-scroll.
+     - Menggunakan properti \`top\`, \`right\`, \`bottom\`, dan \`left\` untuk menentukan posisi elemen relatif terhadap tepi viewport.
+     - Sering digunakan untuk membuat navigasi tetap (sticky header), footer tetap, atau elemen overlay yang selalu terlihat di layar.
+     \`\`\`css
+     .fixed-header {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: #f0f0f0;
+       padding: 10px;
+     }
+     \`\`\`
+
+  5. **\`sticky\` (Lengket):**
+     - Elemen diposisikan berdasarkan posisi scroll pengguna.
+     - Awalnya, elemen berperilaku seperti \`position: relative;\` dalam aliran dokumen normal.
+     - Ketika pengguna men-scroll halaman dan elemen mencapai posisi threshold tertentu (ditetapkan dengan properti \`top\`, \`right\`, \`bottom\`, atau \`left\`), elemen menjadi "lengket" dan berperilaku seperti \`position: fixed;\` dalam viewport.
+     - Sering digunakan untuk membuat header atau sidebar yang tetap terlihat saat pengguna men-scroll melewati konten tertentu.
+     \`\`\`css
+     .sticky-nav {
+       position: sticky;
+       top: 0; /* Elemen menjadi sticky ketika mencapai bagian atas viewport */
+       background-color: lightblue;
+       padding: 10px;
+     }
+     \`\`\`
+
+  ## Properti Offset Positioning
+
+  Properti-properti berikut digunakan untuk menentukan posisi elemen yang diposisikan (kecuali untuk \`position: static;\`):
+
+  - **\`top\`, \`right\`, \`bottom\`, \`left\`: ** Menentukan jarak offset dari tepi atas, kanan, bawah, atau kiri dari kontainer positioning (untuk \`position: relative\` dan \`position: absolute\`) atau viewport (untuk \`position: fixed\` dan \`position: sticky\`). Nilai dapat berupa panjang (px, em, %, dll.) atau \`auto\`.
+  - **\`z-index\`: ** Menentukan urutan tumpukan (stacking order) elemen yang diposisikan yang saling tumpang tindih. Elemen dengan nilai \`z-index\` yang lebih tinggi akan berada di atas elemen dengan nilai yang lebih rendah. \`z-index\` hanya berlaku untuk elemen yang diposisikan (position selain \`static\`). Nilai dapat berupa bilangan bulat positif, negatif, atau nol.
+     \`\`\`css
+     .overlay {
+       position: absolute;
+       top: 50px;
+       left: 50px;
+       z-index: 10; /* Overlay akan berada di atas elemen lain dengan z-index lebih rendah */
+       background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+       color: white;
+       padding: 20px;
+     }
+     \`\`\`
+
+  ## Contoh Penggunaan Positioning
+
+  - **Tata Letak Header Tetap (Fixed Header):** Menggunakan \`position: fixed;\` untuk membuat header navigasi yang selalu terlihat di bagian atas viewport saat halaman di-scroll.
+  - **Sidebar Lengket (Sticky Sidebar):** Menggunakan \`position: sticky;\` untuk membuat sidebar yang tetap terlihat saat konten utama di-scroll.
+  - **Overlay dan Modal:** Menggunakan \`position: absolute;\` atau \`position: fixed;\` untuk membuat overlay atau modal yang muncul di atas konten halaman.
+  - **Tata Letak Multi-Kolom:** Menggunakan \`position: relative;\` dan \`position: absolute;\` bersama dengan flexbox atau grid untuk membuat tata letak multi-kolom yang kompleks.
+
+  Memahami dan menguasai positioning dalam CSS memungkinkan Anda untuk menciptakan tata letak web yang dinamis dan menarik secara visual. Eksperimen dengan berbagai jenis positioning dan properti offset untuk memahami bagaimana mereka bekerja dan bagaimana Anda dapat menggunakannya untuk mencapai efek desain yang diinginkan.
+          `
+        }
+      },
+      {
+        id: 'transisi-animasi-css',
+        title: 'Transisi dan Animasi CSS Dasar',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Transisi dan Animasi CSS Dasar
+
+  Transisi dan animasi CSS memungkinkan Anda menambahkan efek visual yang menarik dan interaktif ke halaman web Anda tanpa menggunakan JavaScript. Transisi digunakan untuk membuat perubahan properti CSS yang halus dan bertahap, sementara animasi memungkinkan Anda membuat urutan perubahan gaya yang lebih kompleks dan berulang.
+
+  ## Transisi CSS
+
+  Transisi CSS memungkinkan Anda untuk menganimasikan perubahan properti CSS dari satu nilai ke nilai lain secara bertahap selama durasi waktu tertentu. Transisi biasanya dipicu oleh interaksi pengguna, seperti hover atau focus, atau oleh perubahan state JavaScript.
+
+  ### Properti Transisi
+
+  1. **\`transition-property\`: ** Menentukan properti CSS mana yang akan dianimasikan. Anda dapat menentukan satu properti, beberapa properti (dipisahkan koma), atau \`all\` untuk menganimasikan semua properti yang dapat dianimasikan.
+     \`\`\`css
+     .transition-element {
+       transition-property: color, background-color; /* Animasikan properti color dan background-color */
+       transition-property: all; /* Animasikan semua properti yang dapat dianimasikan */
+     }
+     \`\`\`
+
+  2. **\`transition-duration\`: ** Menentukan durasi transisi, yaitu berapa lama animasi akan berlangsung. Nilai ditentukan dalam detik (s) atau milidetik (ms).
+     \`\`\`css
+     .transition-element {
+       transition-duration: 0.5s; /* Durasi transisi 0.5 detik */
+       transition-duration: 500ms; /* Durasi transisi 500 milidetik */
+     }
+     \`\`\`
+
+  3. **\`transition-timing-function\`: ** Menentukan kurva kecepatan transisi, yaitu bagaimana kecepatan animasi berubah selama durasi. Nilai yang umum meliputi:
+     - \`ease\` (default): Memulai lambat, mempercepat di tengah, dan melambat di akhir.
+     - \`linear\`: Kecepatan konstan sepanjang durasi.
+     - \`ease-in\`: Memulai lambat dan kemudian mempercepat.
+     - \`ease-out\`: Memulai cepat dan melambat di akhir.
+     - \`ease-in-out\`: Memulai lambat, mempercepat di tengah, dan melambat di akhir (mirip dengan \`ease\`, tetapi lebih halus).
+     - \`cubic-bezier(n,n,n,n)\`: Memungkinkan Anda menentukan kurva kecepatan kustom menggunakan fungsi Bézier kubik.
+     \`\`\`css
+     .transition-element {
+       transition-timing-function: ease-in-out; /* Kurva kecepatan ease-in-out */
+       transition-timing-function: linear; /* Kurva kecepatan linear */
+       transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Kurva kecepatan kustom */
+     }
+     \`\`\`
+
+  4. **\`transition-delay\`: ** Menentukan penundaan sebelum transisi dimulai. Nilai ditentukan dalam detik (s) atau milidetik (ms).
+     \`\`\`css
+     .transition-element {
+       transition-delay: 0.2s; /* Penundaan 0.2 detik sebelum transisi dimulai */
+     }
+     \`\`\`
+
+  5. **\`transition\` (Shorthand): ** Properti shorthand untuk mengatur semua properti transisi dalam satu deklarasi. Urutan nilai: \`transition-property\`, \`transition-duration\`, \`transition-timing-function\`, \`transition-delay\`.
+     \`\`\`css
+     .transition-element {
+       transition: color 0.3s ease-in-out 0.1s; /* Shorthand untuk semua properti transisi */
+       transition: all 0.5s ease; /* Animasikan semua properti dengan durasi 0.5s dan kurva kecepatan ease */
+     }
+     \`\`\`
+
+  ### Contoh Transisi Hover
+
+  \`\`\`css
+  .button {
+    background-color: lightblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Transisi untuk background-color */
+  }
+
+  .button:hover {
+    background-color: darkblue; /* Warna latar belakang berubah saat dihover */
+  }
+  \`\`\`
+
+  ## Animasi CSS
+
+  Animasi CSS memungkinkan Anda membuat urutan perubahan gaya yang lebih kompleks dan berulang. Animasi didefinisikan menggunakan \`@keyframes\` rule, yang menentukan serangkaian keyframe yang menggambarkan state animasi pada titik waktu yang berbeda.
+
+  ### Properti Animasi
+
+  1. **\`animation-name\`: ** Menentukan nama animasi \`@keyframes\` yang akan digunakan.
+     \`\`\`css
+     .animated-element {
+       animation-name: fadeIn; /* Menggunakan animasi dengan nama fadeIn */
+     }
+     \`\`\`
+
+  2. **\`animation-duration\`: ** Menentukan durasi satu siklus animasi.
+     \`\`\`css
+     .animated-element {
+       animation-duration: 2s; /* Durasi animasi 2 detik */
+     }
+     \`\`\`
+
+  3. **\`animation-timing-function\`: ** Menentukan kurva kecepatan animasi, sama seperti \`transition-timing-function\`.
+     \`\`\`css
+     .animated-element {
+       animation-timing-function: linear; /* Kurva kecepatan linear */
+     }
+     \`\`\`
+
+  4. **\`animation-delay\`: ** Menentukan penundaan sebelum animasi dimulai.
+     \`\`\`css
+     .animated-element {
+       animation-delay: 1s; /* Penundaan 1 detik sebelum animasi dimulai */
+     }
+     \`\`\`
+
+  5. **\`animation-iteration-count\`: ** Menentukan berapa kali animasi akan diulang. Nilai \`infinite\` akan membuat animasi berulang tanpa henti.
+     \`\`\`css
+     .animated-element {
+       animation-iteration-count: 3; /* Animasi akan diulang 3 kali */
+       animation-iteration-count: infinite; /* Animasi akan berulang tanpa henti */
+     }
+     \`\`\`
+
+  6. **\`animation-direction\`: ** Menentukan arah animasi.
+     - \`normal\` (default): Animasi dimainkan maju.
+     - \`reverse\`: Animasi dimainkan mundur.
+     - \`alternate\`: Animasi dimainkan maju pada iterasi pertama, mundur pada iterasi kedua, dan seterusnya.
+     - \`alternate-reverse\`: Animasi dimainkan mundur pada iterasi pertama, maju pada iterasi kedua, dan seterusnya.
+     \`\`\`css
+     .animated-element {
+       animation-direction: alternate; /* Animasi maju-mundur bergantian */
+     }
+     \`\`\`
+
+  7. **\`animation-fill-mode\`: ** Menentukan gaya yang diterapkan ke elemen sebelum animasi dimulai dan setelah animasi selesai.
+     - \`none\` (default): Tidak ada gaya yang diterapkan di luar animasi.
+     - \`forwards\`: Menerapkan gaya dari keyframe terakhir animasi setelah animasi selesai.
+     - \`backwards\`: Menerapkan gaya dari keyframe pertama animasi sebelum animasi dimulai (selama \`animation-delay\` periode).
+     - \`both\`: Menerapkan gaya dari keyframe pertama sebelum animasi dimulai dan gaya dari keyframe terakhir setelah animasi selesai.
+     \`\`\`css
+     .animated-element {
+       animation-fill-mode: forwards; /* Pertahankan gaya keyframe terakhir setelah animasi selesai */
+     }
+     \`\`\`
+
+  8. **\`animation-play-state\`: ** Mengontrol apakah animasi sedang berjalan atau dijeda.
+     - \`running\` (default): Animasi sedang berjalan.
+     - \`paused\`: Animasi dijeda.
+     \`\`\`css
+     .animated-element {
+       animation-play-state: paused; /* Animasi dijeda secara default */
+     }
+     \`\`\`
+
+  9. **\`animation\` (Shorthand): ** Properti shorthand untuk mengatur semua properti animasi dalam satu deklarasi. Urutan nilai: \`animation-name\`, \`animation-duration\`, \`animation-timing-function\`, \`animation-delay\`, \`animation-iteration-count\`, \`animation-direction\`, \`animation-fill-mode\`, \`animation-play-state\`.
+     \`\`\`css
+     .animated-element {
+       animation: fadeIn 2s ease-in-out 0.5s infinite alternate forwards running; /* Shorthand untuk semua properti animasi */
+       animation: slideUp 1s ease-out; /* Animasi dengan nama slideUp, durasi 1s, dan kurva kecepatan ease-out */
+     }
+     \`\`\`
+
+  ### \`@keyframes\` Rule
+
+  \`@keyframes\` rule digunakan untuk mendefinisikan urutan animasi. Di dalamnya, Anda menentukan keyframe yang mewakili state animasi pada titik waktu yang berbeda. Keyframe ditentukan menggunakan persentase (0% hingga 100%) atau kata kunci \`from\` (sama dengan 0%) dan \`to\` (sama dengan 100%).
+
+  \`\`\`css
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Keyframe awal (0%) - elemen sepenuhnya transparan */
+    }
+    to {
+      opacity: 1; /* Keyframe akhir (100%) - elemen sepenuhnya terlihat */
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px); /* Keyframe 0% - elemen digeser 100px ke bawah */
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5; /* Keyframe 50% - opasitas setengah */
+    }
+    100% {
+      transform: translateY(0); /* Keyframe 100% - elemen kembali ke posisi normal */
+      opacity: 1;
+    }
+  }
+  \`\`\`
+
+  ### Contoh Animasi Fade In
+
+  \`\`\`css
+  .fade-in-element {
+    animation: fadeIn 2s ease-in-out; /* Terapkan animasi fadeIn dengan durasi 2 detik */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  \`\`\`
+
+  Transisi dan animasi CSS adalah cara yang ampuh untuk menambahkan interaktivitas dan daya tarik visual ke situs web Anda. Dengan memahami properti dan konsep dasar transisi dan animasi, Anda dapat menciptakan pengalaman pengguna yang lebih menarik dan dinamis. Eksperimen dengan berbagai properti dan keyframe untuk membuat efek animasi yang unik dan kreatif.
+          `
+        }
+      },
+      {
+        id: 'praktik-terbaik-css',
+        title: 'Praktik Terbaik CSS',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Praktik Terbaik CSS
+
+  Menulis CSS yang baik tidak hanya tentang membuat halaman web terlihat bagus, tetapi juga tentang membuat kode yang mudah dibaca, dikelola, dan dioptimalkan. Berikut adalah beberapa praktik terbaik yang direkomendasikan untuk penulisan CSS:
+
+  ## 1. Struktur dan Organisasi CSS
+
+  - **Gunakan File CSS Eksternal:** Selalu pisahkan CSS dari HTML dengan menggunakan file CSS eksternal (\`.css\`). Tautkan file CSS ke HTML menggunakan tag \`<link>\`. Ini membuat kode lebih bersih, lebih mudah dikelola, dan memungkinkan caching CSS oleh peramban web.
+    \`\`\`html
+    <link rel="stylesheet" href="style.css">
+    \`\`\`
+
+  - **Organisasi File dan Folder:** Untuk proyek yang lebih besar, atur file CSS Anda dalam struktur folder yang logis. Misalnya, Anda dapat memisahkan CSS berdasarkan komponen, tata letak, atau jenis halaman.
+    \`\`\`
+    css/
+    ├── base/
+    │   ├── reset.css
+    │   ├── typography.css
+    ├── components/
+    │   ├── button.css
+    │   ├── navbar.css
+    ├── layout/
+    │   ├── grid.css
+    │   ├── header.css
+    ├── pages/
+    │   ├── home.css
+    │   ├── product.css
+    ├── utilities/
+    │   ├── colors.css
+    │   ├── spacing.css
+    ├── main.css /* File utama yang mengimpor semua file lainnya */
+    \`\`\`
+
+  - **Gunakan \`@import\` dengan Bijak:** Gunakan \`@import\` dalam CSS untuk memecah stylesheet besar menjadi file-file yang lebih kecil dan terkelola. Namun, hindari penggunaan \`@import\` berlebihan karena dapat memperlambat performa halaman. Lebih baik menggunakan preprocessor CSS seperti Sass atau Less untuk modularitas.
+
+  - **Komentar Kode:** Tambahkan komentar yang jelas dan deskriptif dalam kode CSS Anda untuk menjelaskan bagian-bagian kode, selektor kompleks, atau logika desain. Komentar membantu Anda dan pengembang lain memahami kode Anda di masa mendatang.
+    \`\`\`css
+    /* ==================================
+       Layout Styles - Header
+       ================================== */
+    .header {
+      /* ... */
+    }
+
+    /* Style untuk tombol utama di situs */
+    .button--primary {
+      /* ... */
+    }
+    \`\`\`
+
+  ## 2. Penamaan Kelas dan Selektor
+
+  - **Konvensi Penamaan yang Konsisten (BEM, SMACSS, OOCSS):** Ikuti konvensi penamaan kelas CSS yang konsisten seperti BEM (Block, Element, Modifier), SMACSS (Scalable and Modular Architecture for CSS), atau OOCSS (Object-Oriented CSS). Konvensi ini membantu menjaga konsistensi dan prediktabilitas dalam penamaan kelas dan struktur CSS Anda.
+    - **BEM Example:**
+      \`\`\`css
+      /* Block */
+      .button {}
+      /* Element */
+      .button__text {}
+      /* Modifier */
+      .button--primary {}
+      \`\`\`
+
+  - **Nama Kelas yang Deskriptif dan Bermakna:** Gunakan nama kelas yang deskriptif dan bermakna yang mencerminkan fungsi atau konten elemen. Hindari nama kelas yang terlalu umum atau abstrak.
+    - **Baik:** \`.navbar\`, \`.product-card\`, \`.article-title\`
+    - **Buruk:** \`.box1\`, \`.item2\`, \`.style-a\`
+
+  - **Hindari Spesifisitas yang Terlalu Tinggi:** Jaga spesifisitas selektor CSS serendah mungkin. Hindari penggunaan ID selectors (\`#id\`) dan inline styles (\`style=""\`) kecuali benar-benar diperlukan. Gunakan class selectors (\`.class\`) dan element selectors (misalnya, \`p\`, \`div\`) sebanyak mungkin.
+
+  - **Gunakan Selektor yang Efisien:** Gunakan selektor CSS yang efisien dan hindari selektor yang terlalu kompleks atau berlapis-lapis yang dapat memperlambat performa peramban web.
+
+  ## 3. Properti dan Nilai CSS
+
+  - **Gunakan Unit Relatif untuk Responsivitas:** Gunakan unit relatif seperti \`em\`, \`rem\`, \`%\`, \`vw\`, \`vh\` untuk ukuran font, tata letak, dan spasi. Ini membuat desain lebih fleksibel dan responsif di berbagai ukuran layar.
+
+  - **Gunakan Variabel CSS (Custom Properties):** Manfaatkan variabel CSS untuk mendefinisikan nilai-nilai yang sering digunakan seperti warna, font, atau spasi. Variabel CSS membuat kode lebih mudah dikelola dan diubah.
+    \`\`\`css
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --font-family-base: 'Arial', sans-serif;
+    }
+
+    .button--primary {
+      background-color: var(--primary-color);
+      color: white;
+      font-family: var(--font-family-base);
+    }
+    \`\`\`
+
+  - **Gunakan Shorthand Properties:** Gunakan properti shorthand CSS untuk menulis kode yang lebih ringkas. Misalnya, gunakan \`margin\`, \`padding\`, \`border\`, \`background\`, \`font\`, \`transition\`, \`animation\` shorthand properties.
+    - **Contoh Shorthand:**
+      \`\`\`css
+      /* Longhand */
+      margin-top: 10px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+
+      /* Shorthand */
+      margin: 10px 20px; /* top-bottom left-right */
+      \`\`\`
+
+  - **Hindari Nilai Magic Numbers:** Hindari penggunaan "magic numbers" (nilai numerik tanpa konteks yang jelas) dalam CSS. Gunakan variabel CSS atau komentar untuk menjelaskan arti nilai-nilai numerik.
+
+  ## 4. Performa dan Optimasi
+
+  - **Minifikasi CSS:** Minifikasi file CSS Anda sebelum di-deploy ke produksi. Minifikasi menghapus spasi, baris baru, dan komentar yang tidak perlu dari kode CSS, mengurangi ukuran file dan mempercepat waktu pemuatan halaman. Gunakan alat minifikasi CSS otomatis.
+
+  - **Kompresi CSS (Gzip):** Pastikan server web Anda mengaktifkan kompresi Gzip untuk file CSS (dan file teks lainnya seperti HTML dan JavaScript). Kompresi Gzip mengurangi ukuran file yang ditransfer melalui jaringan dan mempercepat waktu pemuatan halaman.
+
+  - **Hindari \`@import\` Berlebihan:** Seperti disebutkan sebelumnya, hindari penggunaan \`@import\` berlebihan karena dapat memperlambat performa halaman.
+
+  - **Optimalkan Gambar dan Aset:** Optimalkan ukuran gambar dan aset lainnya yang digunakan dalam desain web Anda. Gunakan format gambar yang tepat (misalnya, WebP untuk gambar, SVG untuk ikon vektor), kompres gambar, dan gunakan teknik lazy loading jika memungkinkan.
+
+  - **Gunakan CDN (Content Delivery Network):** Jika Anda menggunakan library atau framework CSS eksternal (misalnya, Bootstrap, Font Awesome), pertimbangkan untuk menggunakan CDN untuk menghosting file-file tersebut. CDN dapat mempercepat waktu pemuatan halaman dengan memanfaatkan server yang didistribusikan secara geografis dan caching peramban web.
+
+  ## 5. Aksesibilitas dan Validasi
+
+  - **Desain untuk Aksesibilitas:** Pertimbangkan aksesibilitas saat menulis CSS. Pastikan situs web Anda dapat diakses oleh semua pengguna, termasuk pengguna dengan kebutuhan khusus. Gunakan warna kontras yang cukup, ukuran font yang dapat dibaca, dan semantik HTML yang tepat.
+
+  - **Validasi CSS:** Validasi kode CSS Anda menggunakan validator CSS online atau alat pengembang peramban web. Validasi membantu Anda menemukan kesalahan sintaks dan memastikan kode CSS Anda sesuai dengan standar web.
+
+  - **Uji di Berbagai Peramban dan Perangkat:** Uji situs web Anda di berbagai peramban web (Chrome, Firefox, Safari, Edge) dan perangkat (desktop, tablet, ponsel pintar) untuk memastikan tampilan dan fungsionalitas yang konsisten.
+
+  Dengan mengikuti praktik terbaik ini, Anda dapat menulis CSS yang lebih efisien, mudah dikelola, dan berkinerja tinggi. Praktik terbaik ini juga membantu dalam menciptakan desain web yang lebih responsif, mudah diakses, dan profesional.
+          `
+        }
+      },
+      {
+        id: 'kesimpulan-langkah-selanjutnya',
+        title: 'Kesimpulan dan Langkah Selanjutnya',
+        type: 'reading',
+        content: {
+          markdown: `
+  # Kesimpulan dan Langkah Selanjutnya
+
+  Selamat! Anda telah menyelesaikan Modul Pengantar CSS ini. Anda sekarang memiliki pemahaman dasar tentang konsep-konsep penting dalam CSS, termasuk:
+
+  - **Sintaks dan Selektor CSS:** Anda memahami dasar-dasar sintaks CSS dan berbagai jenis selektor untuk menargetkan elemen HTML.
+  - **Warna dan Tipografi:** Anda tahu cara bekerja dengan warna dan properti tipografi untuk menata gaya teks dan elemen visual lainnya.
+  - **Model Kotak (Box Model):** Anda memahami konsep model kotak dan properti padding, border, dan margin untuk mengontrol spasi dan tata letak elemen.
+  - **Flexbox:** Anda telah diperkenalkan dengan flexbox dan dapat menggunakan properti flexbox untuk membuat tata letak satu dimensi yang fleksibel.
+  - **Desain Responsif:** Anda memahami dasar-dasar desain responsif dan cara menggunakan media queries untuk membuat situs web yang beradaptasi dengan berbagai ukuran layar.
+  - **Spesifisitas dan Cascade:** Anda memahami bagaimana spesifisitas dan cascade CSS bekerja untuk menentukan gaya yang diterapkan.
+  - **Unit dalam CSS:** Anda mengenal berbagai unit CSS dan cara memilih unit yang tepat untuk berbagai properti.
+  - **Positioning:** Anda memahami berbagai jenis positioning dalam CSS dan cara mengontrol posisi elemen di halaman.
+  - **Transisi dan Animasi CSS Dasar:** Anda telah mempelajari dasar-dasar transisi dan animasi CSS untuk menambahkan efek visual.
+  - **Praktik Terbaik CSS:** Anda mengetahui praktik terbaik untuk menulis CSS yang efisien, mudah dikelola, dan berkinerja tinggi.
+
+  ## Langkah Selanjutnya
+
+  Untuk memperdalam pengetahuan dan keterampilan CSS Anda, berikut adalah beberapa langkah selanjutnya yang dapat Anda ambil:
+
+  1. **Lanjutkan ke CSS Grid Layout:** Pelajari CSS Grid Layout, metode tata letak dua dimensi yang sangat kuat untuk membuat tata letak halaman web yang kompleks dan responsif. CSS Grid sangat cocok untuk tata letak halaman utama, tata letak aplikasi web, dan tata letak yang membutuhkan kontrol presisi atas posisi elemen.
+
+  2. **Pelajari CSS Preprocessors (Sass, Less, Stylus):** Kuasai CSS preprocessors seperti Sass, Less, atau Stylus. Preprocessor CSS menambahkan fitur-fitur canggih seperti variabel, mixin, fungsi, nesting, dan modularitas ke CSS, yang membuat penulisan dan pengelolaan CSS menjadi lebih efisien dan terstruktur.
+
+  3. **Eksplorasi CSS Frameworks (Bootstrap, Tailwind CSS, Materialize CSS):** Pelajari CSS frameworks seperti Bootstrap, Tailwind CSS, atau Materialize CSS. Framework CSS menyediakan kumpulan komponen UI yang siap pakai, sistem grid responsif, dan utilitas CSS yang membantu Anda membangun situs web dengan cepat dan konsisten.
+
+  4. **Praktik dan Proyek:** Teruslah berlatih dengan membuat proyek-proyek web kecil dan menengah. Semakin banyak Anda berlatih, semakin mahir Anda dalam CSS. Coba buat ulang desain situs web yang Anda sukai, atau buat tata letak dan komponen UI kustom Anda sendiri.
+
+  5. **Pelajari CSS Tingkat Lanjut:** Eksplorasi topik-topik CSS tingkat lanjut seperti:
+     - **CSS Transforms:** Untuk memanipulasi bentuk dan posisi elemen dalam ruang 2D atau 3D (misalnya, \`transform: rotate()\`, \`transform: scale()\`, \`transform: translate()\`).
+     - **CSS Filters:** Untuk menerapkan efek visual seperti blur, grayscale, kontras, dan saturasi pada elemen (misalnya, \`filter: blur()\`, \`filter: grayscale()\`).
+     - **CSS Blend Modes:** Untuk mencampur warna latar belakang dan foreground elemen untuk menciptakan efek visual yang menarik (misalnya, \`mix-blend-mode\`, \`background-blend-mode\`).
+     - **CSS Shapes:** Untuk membuat bentuk-bentuk kompleks dan tata letak non-persegi menggunakan properti \`clip-path\` dan CSS Shapes Module.
+     - **CSS Houdini:** Untuk memperluas kemampuan CSS dengan API tingkat rendah yang memungkinkan Anda membuat properti CSS kustom, layout, dan paint worklets.
+
+  6. **Ikuti Perkembangan CSS Terbaru:** CSS terus berkembang dengan fitur-fitur baru dan peningkatan. Ikuti blog web development, situs web W3C, dan komunitas online untuk tetap up-to-date dengan perkembangan terbaru dalam CSS.
+
+  7. **Gunakan Alat Pengembang Peramban (Browser Developer Tools):** Jadilah mahir dalam menggunakan alat pengembang peramban web. Alat-alat ini sangat penting untuk debugging CSS, memeriksa gaya yang diterapkan, menguji responsivitas, dan mengoptimalkan performa CSS.
+
+  Selamat belajar dan teruslah bereksplorasi dengan CSS! Dunia desain web sangat luas dan menarik, dan CSS adalah salah satu alat utama Anda untuk mewujudkan visi kreatif Anda di web.
+          `
+        }
+      }
+    ]
+  };
